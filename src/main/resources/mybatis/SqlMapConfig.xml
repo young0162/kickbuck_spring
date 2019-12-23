@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	 <typeAliases>
+	 	 <typeAlias type="com.spring.dto.QnADto" alias="qdto"/>
+	 </typeAliases>
+	 <mappers>
+	 	<mapper resource="mybatis/mysql/QnASql.xml" /> 
+	 </mappers>
+</configuration>
