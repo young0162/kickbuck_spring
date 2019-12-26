@@ -7,4 +7,7 @@
 	<select id="loginCheck" resultType="int" parameterType="Map">
 		select count(*) from member where email1 = #{email1} and password = #{password}
 	</select>
+	<select id="loginCheck" resultType="int" parameterType="Map">
+		select count(*) from member where email1 = #{email1} and password = #{password}
+	</select>
 </mapper>
