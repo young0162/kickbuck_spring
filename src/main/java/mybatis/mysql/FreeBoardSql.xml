@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="freeboard">
+	
+	<select id="boardAllList" resultType="fdto">
+		select * from freeBoard order by num desc
+	</select>
+	
+	<select id="boardSelectOne" parameterType="int" resultType="fdto">
+		select * from freeBoard where num=#{num}
+	</select>
+	
+	<update id="boardUpdateReadcnt" parameterType="int">
+		update freeBoard set readcnt=readcnt+1 where num=#{num}
+	</update>
+	
+	<insert id="boardInsert" parameterType="fdto">
+		insert into freeBoard values(0
+		,#{title},#{content},#{imagename},#{writer},0,now())
+	</insert>
+	
+	<delete id="boardDelete" parameterType="int">
+		delete from freeBoard where num=#{num}
+	</delete>
+	
+	<update id="boardUpdate" parameterType="fdto">
+		update freeBoard set title=#{title},content=#{content},imagename=#{imagename},writer=#{writer},writeday=now() where num=#{num}
+	</update>
+	
+</mapper>
