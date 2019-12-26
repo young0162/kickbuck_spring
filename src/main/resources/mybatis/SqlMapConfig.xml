@@ -3,8 +3,10 @@
 <configuration>
 	 <typeAliases>
 	 	 <typeAlias type="com.spring.dto.QnADto" alias="qdto"/>
+	 	 <typeAlias type="com.spring.dto.MemberDto" alias="mdto"/>
 	 </typeAliases>
 	 <mappers>
-	 	<mapper resource="mybatis/mysql/QnASql.xml" /> 
+	 	<mapper resource="mybatis/mysql/QnASql.xml" />
+	 	<mapper resource="mybatis/mysql/MemberSql.xml" />  
 	 </mappers>
 </configuration>
