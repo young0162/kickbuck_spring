@@ -54,5 +54,14 @@ public class QnAController {
 		qservice.updateReadCount(num); // 조회수 증가
 		return qservice.getData(num);
 	}
+	
+	@RequestMapping("/qnaboard/update")
+	public void updateData(@RequestBody QnADto dto)
+	{
+		System.out.println("react>>update");
+		System.out.println("데이타 확인 : "+ dto);
+		
+		qservice.updateData(dto);
+	}
 
 }
