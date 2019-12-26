@@ -3,17 +3,10 @@ package com.spring.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spring.dao.GuestDao;
+import com.spring.dao.FreeBoardCommentDao;
 
 @Service
-public class GuestService {
-	
+public class FreeBoardCommentService {
 	@Autowired
-	private GuestDao dao;
-	
-	public int getTotalCount()
-	{
-		return dao.getTotalCount(); 
-	}
-	
+	private FreeBoardCommentDao dao;
 }

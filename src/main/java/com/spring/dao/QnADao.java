@@ -39,4 +39,10 @@ public class QnADao extends SqlSessionDaoSupport{
 	{
 		return getSqlSession().selectOne("qnaBoardSelectOne", num);
 	}
+	
+	// 게시판 글 수정 메서드
+	public void updateData(QnADto dto)
+	{
+		getSqlSession().update("qnaBoardUpdate", dto);
+	}
 }

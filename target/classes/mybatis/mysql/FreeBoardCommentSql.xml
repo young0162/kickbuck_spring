@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="freeboardcomment">
+	<insert id="freeboardinsert" parameterType="fcdto">
+		insert into board values(0,0,#{ref},#{re_indent},#{re_step},#{content},#{writer},now())
+	</insert>
+</mapper>

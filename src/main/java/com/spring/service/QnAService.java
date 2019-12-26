@@ -42,5 +42,11 @@ public class QnAService {
 	{
 		return dao.getData(num);
 	}
+	
+	// 게시판 글 수정 메서드
+	public void updateData(QnADto dto)
+	{
+		dao.updateData(dto);		
+	}
 
 }
