@@ -6,7 +6,7 @@
 	
 	<!-- 댓글 리스트 -->
 	<select id="qnaCommentAllList" resultType="qcdto" parameterType="int">
-		select * from qnacomment where num=#{num} order by comment_num asc, writeday
+		select * from qnacomment where num=#{num} order by group_num asc, writeday asc
 	</select>
 	
 	<!-- 댓글 등록 -->
@@ -30,6 +30,10 @@
 		values (0, #{group_num}, 2, #{num}, #{nickname}, #{comment}, now())
 	</insert>
 	
+	<!-- 댓글 삭제 -->
+	<delete id="qnaCommentDelete" parameterType="int">
+		delete from qnacomment where comment_num=#{comment_num} 
+	</delete>
 	
 	
 </mapper>

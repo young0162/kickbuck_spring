@@ -48,5 +48,11 @@ public class QnaCommentService {
 		dao.insertReComment(dto);
 	}
 	
+	// 댓글 삭제
+		public void deleteComment(int comment_num)
+		{
+			dao.deleteComment(comment_num);
+		}
+	
 
 }
