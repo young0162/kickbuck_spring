@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bucket">
+	<insert id="bucketInsert" parameterType="bdto">
+		insert into bucket (num, id, type, subject, content, image, likecount, withcount, hashtag, area, dday, writeday)
+		values (0, #{id}, 'solo', #{subject}, #{content}, #{image}, 0, 0, #{hashtag}, #{area}, #{dday}, now())
+	</insert>
 	
+	<update id="bucketWithUp" parameterType="int">
+		update bucket set withcount = withcount + 1 where num = #{num}
+	</update>
+	
+	<update id="bucketLikeUp" parameterType="int">
+		update bucket set likecount = likecount + 1 where num = #{num}
+	</update>
+	
+	<select id="AllSelect" resultType="bdto">
+		select * from bucket
+	</select>
 </mapper>
