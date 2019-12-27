@@ -16,10 +16,10 @@ public class MemberDao extends SqlSessionDaoSupport {
 		getSqlSession().insert("memberInsert",dto);
 	}
 	
-	public int loginCheck(String email1, String password)
+	public int loginCheck(String user_name, String password)
 	{
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("email1",email1);
+		map.put("user_name",user_name);
 		map.put("password",password);
 		
 		return getSqlSession().selectOne("loginCheck",map);

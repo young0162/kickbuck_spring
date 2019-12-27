@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 public class BucketDto {
 	
 	private int num;
-	private String id;
+	private String user_name;
 	private String type;
 	private String subject;
 	private String content;
@@ -17,12 +17,13 @@ public class BucketDto {
 	private String area;
 	private String dday;
 	
+	
 	@Override
 	public String toString() {
-		return "BucketDto [num=" + num + ", id=" + id + ", type=" + type + ", subject=" + subject + ", content="
-				+ content + ", image=" + image + ", likecount=" + likecount + ", withcount=" + withcount + ", hashtag="
-				+ hashtag + ", area=" + area + ", dday=" + dday + ", writeday=" + writeday + ", withopen=" + withopen
-				+ ", open=" + open + ", person=" + person + "]";
+		return "BucketDto [num=" + num + ", user_name=" + user_name + ", type=" + type + ", subject=" + subject
+				+ ", content=" + content + ", image=" + image + ", likecount=" + likecount + ", withcount=" + withcount
+				+ ", hashtag=" + hashtag + ", area=" + area + ", dday=" + dday + ", writeday=" + writeday
+				+ ", withopen=" + withopen + ", open=" + open + ", person=" + person + "]";
 	}
 	
 	public int getNum() {
@@ -32,13 +33,12 @@ public class BucketDto {
 	public void setNum(int num) {
 		this.num = num;
 	}
-
-	public String getId() {
-		return id;
+	public String getUser_name() {
+		return user_name;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
 	public String getType() {

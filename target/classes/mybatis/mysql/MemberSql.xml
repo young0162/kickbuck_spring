@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="member">
 	<insert id="memberInsert" parameterType="mdto">
-		insert into member (num, email1, email2, name, password, phone, gaipday) values (0, #{email1}, #{email2}, #{name}, #{password}, #{phone}, now())
+		insert into member (num, email1, email2, user_name, password, phone, gaipday) values (0, #{email1}, #{email2}, #{user_name}, #{password}, #{phone}, now())
 	</insert>
 	<select id="loginCheck" resultType="int" parameterType="Map">
-		select count(*) from member where email1 = #{email1} and password = #{password}
+		select count(*) from member where user_name = #{user_name} and password = #{password}
 	</select>
 </mapper>

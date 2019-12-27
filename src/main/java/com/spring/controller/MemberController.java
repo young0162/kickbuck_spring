@@ -31,7 +31,7 @@ public class MemberController {
 	public int loginCheck(@RequestBody Map<String, String> map)
 	{ 
 		System.out.println("react>>login");
-		int num = mservice.loginCheck(map.get("email1"),map.get("password"));
+		int num = mservice.loginCheck(map.get("user_name"),map.get("password"));
 		System.out.println(num);
 		
 		return num;
