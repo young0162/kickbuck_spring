@@ -11,7 +11,7 @@
 	
 	<!-- 글 등록 -->
 	<insert id="qnaBoardInsert" parameterType="qdto">
-		insert into qnaboard (num,nickname,title,content,writeday) values (0,#{nickname},#{title},#{content},now())
+		insert into qnaboard (num,user_name,title,content,writeday) values (0,#{user_name},#{title},#{content},now())
 	</insert>
 	
 	<!-- 글 삭제 -->

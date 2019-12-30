@@ -18,7 +18,7 @@ public class QnaCommentDto {
 	private int num;
 	
 	/* 작성자의 닉네임 */
-	private String nickname;
+	private String user_name;
 	
 	/* 댓글 내용 */
 	private String comment;
@@ -64,12 +64,12 @@ public class QnaCommentDto {
 		this.num = num;
 	}
 
-	public String getNickname() {
-		return nickname;
+	public String getUser_name() {
+		return user_name;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
 	public String getComment() {
@@ -96,7 +96,7 @@ public class QnaCommentDto {
 	// react에서 넘어오는 값을 확인
 	@Override
 	public String toString() {
-		return "QnaComment [comment=" + comment + ", nickname=" + nickname + "]";
+		return "QnaComment [comment=" + comment + ", user_name=" + user_name + "]";
 	}
 	
 	
