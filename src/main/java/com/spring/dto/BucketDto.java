@@ -16,6 +16,7 @@ public class BucketDto {
 	private String hashtag;
 	private String area;
 	private String dday;
+	private String []imgarr;
 	
 	
 	@Override
@@ -71,6 +72,7 @@ public class BucketDto {
 
 	public void setImage(String image) {
 		this.image = image;
+		this.imgarr();
 	}
 
 	public int getLikecount() {
@@ -160,7 +162,19 @@ public class BucketDto {
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		return sdf.format(this.getWriteday());
 	}
+
+	public String[] getImgarr() {
+		return imgarr;
+	}
+
+	public void setImgarr(String[] imgarr) {
+		this.imgarr = imgarr;
+	}
 	
+	
+	public void imgarr() {
+		imgarr = this.getImage().split(",");
+	}
 
 	
 }
