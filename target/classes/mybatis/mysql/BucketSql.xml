@@ -17,4 +17,8 @@
 	<select id="AllSelect" resultType="bdto">
 		select * from bucket
 	</select>
+	
+	<select id="OneSelect" resultType="bdto" parameterType="int">
+		select * from bucket where num = #{num}
+	</select>
 </mapper>

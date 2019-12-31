@@ -71,4 +71,11 @@ public class BucketController {
 		return bservice.AllSelect();
 	}
 	
+	@RequestMapping("/oneselect")
+	public BucketDto OneSelect(@RequestParam int num)
+	{
+		System.out.println("react >> bucket select one");
+		return bservice.OneSelect(num);
+	}
+	
 }

@@ -30,4 +30,9 @@ public class BucketDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("AllSelect");
 	}
 	
+	public BucketDto OneSelect(int num) 
+	{
+		return getSqlSession().selectOne("OneSelect",num);
+	}
+	
 }

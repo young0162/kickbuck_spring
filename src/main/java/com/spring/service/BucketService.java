@@ -35,4 +35,9 @@ public class BucketService {
 		return dao.AllSelect();
 	}
 	
+	public BucketDto OneSelect(int num)
+	{
+		return dao.OneSelect(num);
+	}
+	
 }
