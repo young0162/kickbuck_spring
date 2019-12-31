@@ -2,8 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="freeboard">
 	
-	<select id="boardAllList" resultType="fdto">
-		select * from freeBoard order by num desc
+	<select id="boardAllList" resultType="fdto" parameterType="int">
+		select * from freeBoard order by num desc limit #{start}, 15 
+	</select>
+	
+	<select id="boardCount" resultType="int">
+		select count(*) from freeBoard 
 	</select>
 	
 	<select id="boardSelectOne" parameterType="int" resultType="fdto">
@@ -26,5 +30,7 @@
 	<update id="boardUpdate" parameterType="fdto">
 		update freeBoard set title=#{title},content=#{content},imagename=#{imagename},writer=#{writer},writeday=now() where num=#{num}
 	</update>
+	
+
 	
 </mapper>
