@@ -1,8 +1,6 @@
 package com.spring.service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +44,12 @@ public class QnaCommentService {
 	public void insertReComment(QnaCommentDto dto)
 	{
 		dao.insertReComment(dto);
+	}
+	
+	// 댓글 삭제
+	public void deleteComment(int comment_num)
+	{
+		dao.deleteComment(comment_num);
 	}
 	
 

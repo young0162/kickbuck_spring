@@ -17,9 +17,9 @@ public class MemberService {
 		dao.insertMember(dto);
 	}
 	
-	public int loginCheck(String email1, String password)
+	public int loginCheck(String user_name, String password)
 	{
-		return dao.loginCheck(email1, password);
+		return dao.loginCheck(user_name, password);
 	}
 	
 }

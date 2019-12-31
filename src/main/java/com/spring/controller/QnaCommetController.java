@@ -53,5 +53,13 @@ public class QnaCommetController {
 		qcservice.insertReComment(dto);
 		
 	}
+	
+	
+	@RequestMapping(value="/qnacomment/commentdelete", method=RequestMethod.GET)
+	public void deleteComment(@RequestParam int comment_num)
+	{
+		System.out.println("react>>delete"+comment_num);
+		qcservice.deleteComment(comment_num);		
+	}
 
 }

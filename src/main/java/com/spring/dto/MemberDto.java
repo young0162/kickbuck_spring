@@ -8,7 +8,7 @@ public class MemberDto {
 	private int num;
 	private String email1;
 	private String email2;
-	private String name;
+	private String user_name;
 	private String password;
 	private String phone;
 	private Timestamp gaipday;
@@ -31,12 +31,6 @@ public class MemberDto {
 	}
 	public void setEmail2(String email2) {
 		this.email2 = email2;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
 	}
 	public String getPassword() {
 		return password;
@@ -66,10 +60,18 @@ public class MemberDto {
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		return sdf.format(this.getGaipday());
 	}
+	public String getUser_name() {
+		return user_name;
+	}
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
 	
 	@Override
 	public String toString() {
-		return "MemberDto [num=" + num + ", email1=" + email1 + ", email2=" + email2 + ", name=" + name + ", password="
-				+ password + ", phone=" + phone + ", gaipday=" + gaipday + "]";
+		return "MemberDto [num=" + num + ", email1=" + email1 + ", email2=" + email2 + ", user_name=" + user_name
+				+ ", password=" + password + ", phone=" + phone + ", gaipday=" + gaipday + "]";
 	}
+	
+
 }

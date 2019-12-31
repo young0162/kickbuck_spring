@@ -1,8 +1,8 @@
 package com.spring.dao;
 
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
+
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
@@ -42,6 +42,10 @@ public class QnaCommentDao extends SqlSessionDaoSupport{
 		getSqlSession().insert("qnaReCommentInsert", dto);
 	}
 	
-	
+	// 댓글 삭제
+	public void deleteComment(int comment_num)
+	{
+		getSqlSession().delete("qnaCommentDelete", comment_num);
+	}
 
 }

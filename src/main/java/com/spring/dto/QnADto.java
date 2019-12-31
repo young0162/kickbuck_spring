@@ -15,7 +15,7 @@ public class QnADto {
 	private String content;
 	
 	/* 작성자 */
-	private String nickname;
+	private String user_name;
 	
 	/* 등록시간 */
 	private Timestamp writeday;
@@ -53,12 +53,12 @@ public class QnADto {
 		this.content = content;
 	}
 
-	public String getNickname() {
-		return nickname;
+	public String getUser_name() {
+		return user_name;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
 	public Timestamp getWriteday() {
@@ -93,6 +93,6 @@ public class QnADto {
 	// react에서 넘어오는 값을 확인
 	@Override
 	public String toString() {
-		return "QnADto [title=" + title + ", content=" + content + ", nickname=" + nickname + "]";
+		return "QnADto [title=" + title + ", content=" + content + ", user_name=" + user_name + "]";
 	}
 }
