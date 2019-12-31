@@ -14,9 +14,9 @@ public class QnAService {
 	@Autowired
 	private QnADao dao;
 	
-	public List<QnADto> getAllDatas()
+	public List<QnADto> getAllDatas(int start)
 	{
-		return dao.getAllDatas();
+		return dao.getAllDatas(start);
 	}
 	
 	// 게시판 입력 메서드
