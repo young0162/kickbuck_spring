@@ -20,9 +20,9 @@ public class BucketService {
 		dao.insertBucket(dto);
 	}
 	
-	public void bucketWithUp(int num)
+	public void bucketWithUp(String user_name, String num)
 	{
-		dao.bucketWithUp(num);
+		dao.bucketWithUp(user_name, num);
 	}
 	
 	public void bucketLiekUp(int num)

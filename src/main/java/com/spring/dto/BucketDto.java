@@ -17,14 +17,28 @@ public class BucketDto {
 	private String area;
 	private String dday;
 	private String []imgarr;
+	private String []hasharr;
+	private Timestamp writeday;
+	private int withopen;
+	private String open;
+	private int person;
 	
 	
+
 	@Override
 	public String toString() {
 		return "BucketDto [num=" + num + ", user_name=" + user_name + ", type=" + type + ", subject=" + subject
 				+ ", content=" + content + ", image=" + image + ", likecount=" + likecount + ", withcount=" + withcount
 				+ ", hashtag=" + hashtag + ", area=" + area + ", dday=" + dday + ", writeday=" + writeday
 				+ ", withopen=" + withopen + ", open=" + open + ", person=" + person + "]";
+	}
+	
+	public String[] getHasharr() {
+		return hasharr;
+	}
+
+	public void setHasharr(String[] hasharr) {
+		this.hasharr = hasharr;
 	}
 	
 	public int getNum() {
@@ -97,6 +111,7 @@ public class BucketDto {
 
 	public void setHashtag(String hashtag) {
 		this.hashtag = hashtag;
+		this.hasharr();
 	}
 
 	public String getArea() {
@@ -131,11 +146,13 @@ public class BucketDto {
 		this.withopen = withopen;
 	}
 
-	public int getOpen() {
+
+
+	public String getOpen() {
 		return open;
 	}
 
-	public void setOpen(int open) {
+	public void setOpen(String open) {
 		this.open = open;
 	}
 
@@ -147,10 +164,7 @@ public class BucketDto {
 		this.person = person;
 	}
 
-	private Timestamp writeday;
-	private int withopen;
-	private int open;
-	private int person;
+	
 	
 	
 	public String getDay() {
@@ -174,6 +188,10 @@ public class BucketDto {
 	
 	public void imgarr() {
 		imgarr = this.getImage().split(",");
+	}
+	
+	public void hasharr() {
+		hasharr = this.getHashtag().split(",");
 	}
 
 	

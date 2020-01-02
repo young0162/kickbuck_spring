@@ -1,6 +1,7 @@
 package com.spring.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -50,11 +51,15 @@ public class BucketController {
 		bservice.insertBucket(dto);
 	}
 	
-	@RequestMapping(value="/bucketwithup", method = RequestMethod.GET)
-	public void bucketWithUp(@RequestParam int num)
+	@RequestMapping("/bucketwithup")
+	public void bucketWithUp(@RequestBody Map<String, String> map)
 	{
+		String user_name = map.get("user_name");
+		String num = map.get("num");
+		
+		
 		System.out.println("react >> bucket with update");
-		bservice.bucketWithUp(num);
+		bservice.bucketWithUp(user_name,num);
 	}
 	
 	@RequestMapping(value="/bucketlikeup", method = RequestMethod.GET)
