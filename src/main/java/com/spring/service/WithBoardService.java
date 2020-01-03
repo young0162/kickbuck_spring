@@ -36,4 +36,21 @@ public class WithBoardService {
 		dao.updateCommentGroupNum(gnum);		
 	}
 
+	// 대댓글 등록
+	public void insertWithReplyComment(WithBoardDto dto)
+	{
+		dao.insertWithReplyComment(dto);
+	}
+	
+	// 댓글 삭제
+	public void deleteWithComment(int with_num)
+	{
+		dao.deleteWithComment(with_num);
+	}
+	
+	// 이미지 네임을 배열로 불러오기
+	public List<String> getImageNames()
+	{
+		return dao.getImageNames();
+	}
 }

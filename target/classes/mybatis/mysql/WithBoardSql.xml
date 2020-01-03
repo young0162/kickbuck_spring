@@ -10,7 +10,7 @@
 	
 	<!-- 함께하기 입력  -->
 	<insert id="withBoardInsert" parameterType="wdto">
-		insert into withboard (with_num, num, user_name, comment, image_name,writeday) 
+		insert into withboard (with_num, num, user_name, comment, image_name, writeday) 
 		values (0, #{num}, #{user_name}, #{comment}, #{image_name},now())
 	</insert>
 	
@@ -23,6 +23,20 @@
 		update withboard set group_num = #{gnum} where with_num=#{gnum}
 	</update>
 	
+	<!-- 댓글 등록 -->
+	<insert id="withReplyCommentInsert" parameterType="wdto">
+		insert into withboard (with_num, group_num, step_num, num, user_name, comment, image_name, writeday) 
+		values (0, #{group_num}, 2, #{num}, #{user_name}, #{comment}, #{image_name}, now())
+	</insert>
 	
+	<!-- 댓글 삭제 -->
+	<delete id="withCommentDelete" parameterType="int">
+		delete from withboard where with_num=#{with_num} 
+	</delete>
+	
+	<!-- 이미지 컬럼에 이름을 보내기 -->
+	<select id="withImageGalleryData" resultType="String" >
+		select image_name from withboard
+	</select>
 	
 </mapper>

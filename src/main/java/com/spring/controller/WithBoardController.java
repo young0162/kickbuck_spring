@@ -65,6 +65,30 @@ public class WithBoardController {
 		wservice.updateCommentGroupNum(gnum);
 		
 	}
+	
+	// 댓글 등록
+	@RequestMapping("/bucket/withreplyinsert")
+	public void insertWithReplyComment(@RequestBody WithBoardDto dto)
+	{
+		System.out.println("react>>add");
+		System.out.println("데이타 확인 : "+ dto);
+		
+		wservice.insertWithReplyComment(dto);
+	}
+	
+	// 댓글 삭제
+	@RequestMapping(value="/bucket/withcommentdelete", method=RequestMethod.GET)
+	public void deleteWithComment(@RequestParam int with_num)
+	{
+		System.out.println("react>>delete"+with_num);
+		wservice.deleteWithComment(with_num);		
+	}
 
+	
+	@RequestMapping("/bucket/withimagenames")
+	public List<String> getImageNames()
+	{
+		return wservice.getImageNames();
+	}
 	
 }
