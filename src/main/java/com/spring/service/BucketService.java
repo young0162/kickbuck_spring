@@ -25,9 +25,9 @@ public class BucketService {
 		dao.bucketWithUp(user_name, num);
 	}
 	
-	public void bucketLiekUp(int num)
+	public void bucketLiekUp(String user_name, String num)
 	{
-		dao.bucketLikeUp(num);
+		dao.bucketLikeUp(user_name, num);
 	}
 	
 	public List<BucketDto> AllSelect()
@@ -38,6 +38,11 @@ public class BucketService {
 	public BucketDto OneSelect(int num)
 	{
 		return dao.OneSelect(num);
+	}
+	
+	public List<BucketDto> SearchSelect(String keyword)
+	{
+		return dao.SearchSelect(keyword);
 	}
 	
 }

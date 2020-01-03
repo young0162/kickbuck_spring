@@ -2,18 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bucket">
 	<insert id="bucketInsert" parameterType="bdto">
-		insert into bucket (num, user_name, type, subject, content, image, likecount, withcount, hashtag, area, dday, writeday, open)
-		values (0, #{user_name}, 'solo', #{subject}, #{content}, #{image}, 0, 0, #{hashtag}, #{area}, #{dday}, now(), #{open})
+		insert into bucket (num, user_name, type, subject, content, image, likecount, withcount, hashtag, area, dday, writeday, open, with_user, like_user)
+		values (0, #{user_name}, 'solo', #{subject}, #{content}, #{image}, 0, 0, #{hashtag}, #{area}, #{dday}, now(), #{open}, #{user_name}, #{user_name})
 	</insert>
 	
 	<update id="bucketWithUp" parameterType="Map">
-		update bucket set withcount = withcount + 1, with_user = convert(concat(with_user,#{user_name}),char)
-  		where num = #{num} and with_user not like '%'||#{user_name}||'%';
+		update bucket set withcount = withcount + 1, with_user = concat(with_user,',',#{user_name})
+  		where num = #{num} and with_user not like concat('%',#{user_name},'%')
 	</update>
 	
 	<update id="bucketLikeUp" parameterType="Map">
 		update bucket set likecount = likecount + 1, like_user = concat(like_user,',',#{user_name})
-  		where num = #{num} and like_user not like '%#{user_name2}%'
+  		where num = #{num} and like_user not like concat('%',#{user_name},'%')
 	</update>
 	
 	<select id="AllSelect" resultType="bdto">
@@ -22,5 +22,9 @@
 	
 	<select id="OneSelect" resultType="bdto" parameterType="int">
 		select * from bucket where num = #{num}
+	</select>
+	
+	<select id="SearchSelect" parameterType="String" resultType="bdto">
+		select * from bucket where content like concat('%',#{keyword},'%')
 	</select>
 </mapper>

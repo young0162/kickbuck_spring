@@ -26,9 +26,12 @@ public class BucketDao extends SqlSessionDaoSupport{
 		getSqlSession().update("bucketWithUp",map);
 	}
 	
-	public void bucketLikeUp(int num)
+	public void bucketLikeUp(String user_name, String num)
 	{
-		getSqlSession().update("bucketLikeUp",num);
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("user_name",user_name);
+		map.put("num",num);
+		getSqlSession().update("bucketLikeUp",map);
 	}
 	
 	public List<BucketDto> AllSelect()
@@ -39,6 +42,11 @@ public class BucketDao extends SqlSessionDaoSupport{
 	public BucketDto OneSelect(int num) 
 	{
 		return getSqlSession().selectOne("OneSelect",num);
+	}
+	
+	public List<BucketDto> SearchSelect(String keyword)
+	{
+		return getSqlSession().selectList("SearchSelect",keyword);
 	}
 	
 }
