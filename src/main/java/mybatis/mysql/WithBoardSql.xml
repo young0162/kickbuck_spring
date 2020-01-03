@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="withboard">
+	
+	
+	<!-- 리스트  -->
+	<select id="withBoardList" resultType="wdto">
+		select * from withboard order by group_num desc, writeday asc 
+	</select>
+	
+	<!-- 함께하기 입력  -->
+	<insert id="withBoardInsert" parameterType="wdto">
+		insert into withboard (with_num, num, user_name, comment, image_name,writeday) 
+		values (0, #{num}, #{user_name}, #{comment}, #{image_name},now())
+	</insert>
+	
+	<!-- with_num 값을 구해서 group_num에 넣어주기 -->
+	<select id="selectGetWithGroupNum" resultType="int">
+		select Max(with_num) from withboard
+	</select>
+	
+	<update id="updateWithGroupNum" parameterType="int">
+		update withboard set group_num = #{gnum} where with_num=#{gnum}
+	</update>
+	
+	
+	
+</mapper>
