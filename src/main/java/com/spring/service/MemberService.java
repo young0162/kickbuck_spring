@@ -27,6 +27,11 @@ public class MemberService {
 		return dao.emailCheck(email);
 	}
 	
+	public int UserNameCheck(String user_name)
+	{
+		return dao.UserNameCheck(user_name);
+	}
+	
 	
 	
 }

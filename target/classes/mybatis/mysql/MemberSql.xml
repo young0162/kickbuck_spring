@@ -13,4 +13,8 @@
 		select count(*) from member where  email = #{email}
 	</select>
 	
+	<select id="UserNameCheck" resultType="int" parameterType="String">
+		select count(*) from member where  user_name = #{user_name}
+	</select>
+	
 </mapper>
