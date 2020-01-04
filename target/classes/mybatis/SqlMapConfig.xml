@@ -4,9 +4,13 @@
 	 <typeAliases>
 	 	 <typeAlias type="com.spring.dto.QnADto" alias="qdto"/>
 	 	 <typeAlias type="com.spring.dto.MemberDto" alias="mdto"/>
+	 	 <typeAlias type="com.spring.dto.ProfileDto" alias="pdto"/>
+	 	 <typeAlias type="com.spring.dto.MypageDto" alias="ydto"/>
 	 </typeAliases>
 	 <mappers>
 	 	<mapper resource="mybatis/mysql/QnASql.xml" />
-	 	<mapper resource="mybatis/mysql/MemberSql.xml" />  
+	 	<mapper resource="mybatis/mysql/MemberSql.xml" />
+	 	<mapper resource="mybatis/mysql/ProfileSql.xml" />
+	 	<mapper resource="mybatis/mysql/Mypage.xml" />
 	 </mappers>
 </configuration>
