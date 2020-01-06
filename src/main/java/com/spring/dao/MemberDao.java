@@ -25,4 +25,16 @@ public class MemberDao extends SqlSessionDaoSupport {
 		return getSqlSession().selectOne("loginCheck",map);
 	}
 	
+	public int emailCheck(String email)
+	{
+		return getSqlSession().selectOne("emailCheck",email);
+	}
+	
+	public int UserNameCheck(String user_name)
+	{
+		return getSqlSession().selectOne("UserNameCheck",user_name);
+	}
+
+	
+	
 }

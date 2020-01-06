@@ -36,21 +36,21 @@ public class QnaCommetController {
 		
 		qcservice.insertComment(dto);
 		
-		int gnum= qcservice.getGroupNum();
+		int gnum = qcservice.getCommentGroupNum();
 		
 		System.out.println("gnum:"+gnum );
-		qcservice.updateGroupNum(gnum);
+		qcservice.updateCommentGroupNum(gnum);
 		
 	}
 	
 	@RequestMapping("/qnacomment/recommentwrite")
-	public void insertReComment(@RequestBody QnaCommentDto dto)
+	public void insertReplyComment(@RequestBody QnaCommentDto dto)
 	{
 		System.out.println("react>>add");
 		System.out.println("데이타 확인 : "+ dto);
 		
 		
-		qcservice.insertReComment(dto);
+		qcservice.insertReplyComment(dto);
 		
 	}
 	

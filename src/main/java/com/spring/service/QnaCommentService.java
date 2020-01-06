@@ -28,22 +28,22 @@ public class QnaCommentService {
 	}
 	
 	// 댓글의 그룹 넘버 구해서 넣어주기
-	public int getGroupNum()
+	public int getCommentGroupNum()
 	{ 
-		return dao.getGroupNum();
+		return dao.getCommentGroupNum();
 	}
 	
-	public void updateGroupNum(int gnum)
+	public void updateCommentGroupNum(int gnum)
 	{
-		dao.updateGroupNum(gnum);
+		dao.updateCommentGroupNum(gnum);
 	}
 	
 	
 	
 	// 대댓글 등록
-	public void insertReComment(QnaCommentDto dto)
+	public void insertReplyComment(QnaCommentDto dto)
 	{
-		dao.insertReComment(dto);
+		dao.insertReplyComment(dto);
 	}
 	
 	// 댓글 삭제

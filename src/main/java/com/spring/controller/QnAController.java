@@ -21,11 +21,15 @@ public class QnAController {
 	private QnAService qservice;
 	
 	
-	@RequestMapping("/qnaboard/list")
-	public List<QnADto> getAllDatas()
+	@RequestMapping(value="/qnaboard/list", method=RequestMethod.GET)
+	public List<QnADto> getAllDatas(
+			@RequestParam(value = "start", defaultValue = "0") int start
+			)
 	{
 		System.out.println("react>>list");
-		return qservice.getAllDatas();
+		System.out.println("start="+start);
+		
+		return qservice.getAllDatas(start);
 	}
 	
 	@RequestMapping("/qnaboard/write")

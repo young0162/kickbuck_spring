@@ -1,6 +1,7 @@
 package com.spring.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -50,18 +51,26 @@ public class BucketController {
 		bservice.insertBucket(dto);
 	}
 	
-	@RequestMapping(value="/bucketwithup", method = RequestMethod.GET)
-	public void bucketWithUp(@RequestParam int num)
+	@RequestMapping("/bucketwithup")
+	public void bucketWithUp(@RequestBody Map<String, String> map)
 	{
+		String user_name = map.get("user_name");
+		String num = map.get("num");
+		
+		
 		System.out.println("react >> bucket with update");
-		bservice.bucketWithUp(num);
+		bservice.bucketWithUp(user_name,num);
 	}
 	
-	@RequestMapping(value="/bucketlikeup", method = RequestMethod.GET)
-	public void bucketLikeUp(@RequestParam int num)
+	@RequestMapping("/bucketlikeup")
+	public void bucketLikeUp(@RequestBody Map<String, String> map)
 	{
+		String user_name = map.get("user_name");
+		String num = map.get("num");
+		
 		System.out.println("react >> bucket like update");
-		bservice.bucketLiekUp(num);
+		
+		bservice.bucketLiekUp(user_name,num);
 	}
 	
 	@RequestMapping("/allselect")
@@ -69,6 +78,21 @@ public class BucketController {
 	{
 		System.out.println("react >> bucket list all");
 		return bservice.AllSelect();
+	}
+	
+	@RequestMapping("/oneselect")
+	public BucketDto OneSelect(@RequestParam int num)
+	{
+		System.out.println("react >> bucket select one");
+		return bservice.OneSelect(num);
+	}
+	
+	@RequestMapping(value="/searchselect" , method = RequestMethod.GET)
+	public List<BucketDto> SearchSelect(@RequestParam String keyword)
+	{
+		System.out.println("react >> bucket search");
+		System.out.println("keyword : " + keyword);
+		return bservice.SearchSelect(keyword);
 	}
 	
 }
