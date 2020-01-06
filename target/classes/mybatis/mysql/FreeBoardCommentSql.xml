@@ -24,8 +24,8 @@
 	
 	<!-- 대댓글 등록 -->
 	<insert id="freeboardcommentrecommentinsert" parameterType="fcdto">
-		insert into freeBoardComment (comment_num, group_num, step_num, num, user_name, comment, writeday) 
-		values (0, #{group_num}, 2, #{num}, #{user_name}, #{comment}, now())
+		insert into freeBoardComment (comment_num, group_num,step_num, num, user_name, comment, writeday) 
+		values (0, #{group_num},2, #{num}, #{user_name}, #{comment}, now())
 	</insert>
 	
 	<!-- 댓글 삭제 -->
