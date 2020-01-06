@@ -41,12 +41,22 @@ public class FreeBoardController {
 		return "success";
 	}
 	
-	@RequestMapping("/community/freeboardlist")
-	public List<FreeBoardDto> getAllDatas()
+	@RequestMapping(value="/community/freeboardlist",method = RequestMethod.GET)
+	public List<FreeBoardDto> getAllDatas(
+			@RequestParam(value = "start", defaultValue = "0") int start)
 	{
-		System.out.println("community>>list");
 		
-		return fService.getAllDatas();
+		System.out.println("start="+start);
+		
+		return fService.getAllDatas(start);
+	}
+	
+	@RequestMapping("/community/freeboardlist/count")
+	public void FreeBoardCount(int count)
+	{
+		System.out.println("list>>count"+count);
+		
+		fService.FreeBoardCount(count);
 	}
 	
 	@RequestMapping(value="/community/freeboarddetail",method = RequestMethod.GET)
