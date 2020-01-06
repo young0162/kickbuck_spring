@@ -8,6 +8,7 @@
 	 	 <typeAlias type="com.spring.dto.FreeBoardDto" alias="fdto"/>
 	 	 <typeAlias type="com.spring.dto.FreeBoardCommentDto" alias="fcdto"/>
 	 	 <typeAlias type="com.spring.dto.BucketDto" alias="bdto"/>
+	 	 <typeAlias type="com.spring.dto.OffBucketDto" alias="offdto"/>
 	 </typeAliases>
 	 <mappers>
 	 	<mapper resource="mybatis/mysql/QnASql.xml" /> 
@@ -16,5 +17,6 @@
 	 	<mapper resource="mybatis/mysql/FreeBoardSql.xml"/>
 	 	<mapper resource="mybatis/mysql/FreeBoardCommentSql.xml"/>
 	 	<mapper resource="mybatis/mysql/BucketSql.xml" />  
+	 	<mapper resource="mybatis/mysql/OffBucketSql.xml" />
 	 </mappers>
 </configuration>

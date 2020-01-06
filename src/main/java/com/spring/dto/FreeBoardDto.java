@@ -9,7 +9,7 @@ public class FreeBoardDto {
 	private String title;
 	private String content;
 	private String imagename;
-	private String writer;
+	private String user_name;
 	private int readcnt;
 	private Timestamp writeday;
 	private String day;
@@ -39,11 +39,12 @@ public class FreeBoardDto {
 	public void setImagename(String imagename) {
 		this.imagename = imagename;
 	}
-	public String getWriter() {
-		return writer;
+
+	public String getUser_name() {
+		return user_name;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 	public int getReadcnt() {
 		return readcnt;
@@ -68,7 +69,7 @@ public class FreeBoardDto {
 	@Override
 	public String toString() {
 		return "FreeBoardDto [num=" + num + ", title=" + title + ", content=" + content + ", imagename=" + imagename
-				+ ", writer=" + writer + "]";
+				+ ", user_name=" + user_name + "]";
 	}
 
 	
