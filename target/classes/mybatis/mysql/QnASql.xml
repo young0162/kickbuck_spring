@@ -6,7 +6,7 @@
 	
 	<!-- 게시판 리스트 -->
 	<select id="qnaAllList" resultType="qdto">
-		select * from qnaboard order by num desc
+		select * from qnaboard order by num desc limit #{start}, 10
 	</select>
 	
 	<!-- 글 등록 -->

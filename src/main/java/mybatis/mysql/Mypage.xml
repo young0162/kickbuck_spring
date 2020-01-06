@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mypage">
+	<select id="mypageList" resultType="ydto" parameterType="int">
+		select * from mypage order by num desc limit #{start}, 5
+	</select>
+	<select id="mypageSelectData" parameterType="int" resultType="ydto">
+		select * from mypage where num=#{num}
+	</select>
+</mapper>

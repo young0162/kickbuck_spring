@@ -18,6 +18,12 @@ public class QnaCommentDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("qnaCommentAllList", num);
 	}
 	
+	// 코멘트 갯수 구하기
+	public int getCommentCount(int num)
+	{
+		return getSqlSession().selectOne("qnaCommentCount", num);
+	}
+	
 	// 댓글 등록
 	public void insertComment(QnaCommentDto dto)
 	{
@@ -25,21 +31,21 @@ public class QnaCommentDao extends SqlSessionDaoSupport{
 	}
 	
 	// 댓글의 그룹 넘버 구해서 넣어주기
-	public int getGroupNum()
+	public int getCommentGroupNum()
 	{ 
-		return getSqlSession().selectOne("selectGroupNum");
+		return getSqlSession().selectOne("selectGetGroupNum");
 	}
 	
-	public void updateGroupNum(int gnum)
+	public void updateCommentGroupNum(int gnum)
 	{
 		
-		getSqlSession().update("updateGroupNum", gnum);
+		getSqlSession().update("updateCommmentGroupNum", gnum);
 	}
 	
 	// 대댓글 등록
-	public void insertReComment(QnaCommentDto dto)
+	public void insertReplyComment(QnaCommentDto dto)
 	{
-		getSqlSession().insert("qnaReCommentInsert", dto);
+		getSqlSession().insert("qnaReplyCommentInsert", dto);
 	}
 	
 	// 댓글 삭제
