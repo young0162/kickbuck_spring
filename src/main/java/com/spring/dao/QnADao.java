@@ -11,9 +11,9 @@ import com.spring.dto.QnADto;
 public class QnADao extends SqlSessionDaoSupport{
 	
 	// 리스트 출력 메서드
-	public List<QnADto> getAllDatas()
+	public List<QnADto> getAllDatas(int start)
 	{
-		return getSqlSession().selectList("qnaAllList");
+		return getSqlSession().selectList("qnaAllList", start);
 	}
 	
 	// 게시판 입력 메서드
@@ -38,5 +38,11 @@ public class QnADao extends SqlSessionDaoSupport{
 	public QnADto getData(int num)
 	{
 		return getSqlSession().selectOne("qnaBoardSelectOne", num);
+	}
+	
+	// 게시판 글 수정 메서드
+	public void updateData(QnADto dto)
+	{
+		getSqlSession().update("qnaBoardUpdate", dto);
 	}
 }

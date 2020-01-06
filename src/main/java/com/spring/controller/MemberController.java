@@ -31,11 +31,28 @@ public class MemberController {
 	public int loginCheck(@RequestBody Map<String, String> map)
 	{ 
 		System.out.println("react>>login");
-		int num = mservice.loginCheck(map.get("email1"),map.get("password"));
+		int num = mservice.loginCheck(map.get("user_name"),map.get("password"));
 		System.out.println(num);
 		
 		return num;
 	}
-
+	
+	@RequestMapping(value="/emailcheck", method = RequestMethod.GET)
+	public int emailCheck(@RequestParam String email)
+	{
+		System.out.println(email);
+		return mservice.emailCheck(email); 
+	}
+	
+	@RequestMapping(value="/usernamecheck", method = RequestMethod.GET)
+	public int UserNameCheck(@RequestParam String user_name)
+	{
+		System.out.println(user_name);
+		System.out.println(mservice.UserNameCheck(user_name));
+		return mservice.UserNameCheck(user_name);
+		
+	}
+	
+	
 	
 }

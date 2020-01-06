@@ -21,11 +21,15 @@ public class QnAController {
 	private QnAService qservice;
 	
 	
-	@RequestMapping("/qnaboard/list")
-	public List<QnADto> getAllDatas()
+	@RequestMapping(value="/qnaboard/list", method=RequestMethod.GET)
+	public List<QnADto> getAllDatas(
+			@RequestParam(value = "start", defaultValue = "0") int start
+			)
 	{
 		System.out.println("react>>list");
-		return qservice.getAllDatas();
+		System.out.println("start="+start);
+		
+		return qservice.getAllDatas(start);
 	}
 	
 	@RequestMapping("/qnaboard/write")
@@ -53,6 +57,15 @@ public class QnAController {
 		
 		qservice.updateReadCount(num); // 조회수 증가
 		return qservice.getData(num);
+	}
+	
+	@RequestMapping("/qnaboard/update")
+	public void updateData(@RequestBody QnADto dto)
+	{
+		System.out.println("react>>update");
+		System.out.println("데이타 확인 : "+ dto);
+		
+		qservice.updateData(dto);
 	}
 
 }

@@ -3,14 +3,26 @@
 <configuration>
 	 <typeAliases>
 	 	 <typeAlias type="com.spring.dto.QnADto" alias="qdto"/>
+	 	 <typeAlias type="com.spring.dto.QnaCommentDto" alias="qcdto"/>
 	 	 <typeAlias type="com.spring.dto.MemberDto" alias="mdto"/>
 	 	 <typeAlias type="com.spring.dto.ProfileDto" alias="pdto"/>
 	 	 <typeAlias type="com.spring.dto.MypageDto" alias="ydto"/>
+	 	 <typeAlias type="com.spring.dto.FreeBoardDto" alias="fdto"/>
+	 	 <typeAlias type="com.spring.dto.FreeBoardCommentDto" alias="fcdto"/>
+	 	 <typeAlias type="com.spring.dto.BucketDto" alias="bdto"/>
+	 	 <typeAlias type="com.spring.dto.WithBoardDto" alias="wdto"/>
+	 	 <typeAlias type="com.spring.dto.OffBucketDto" alias="offdto"/>
 	 </typeAliases>
 	 <mappers>
 	 	<mapper resource="mybatis/mysql/QnASql.xml" />
 	 	<mapper resource="mybatis/mysql/MemberSql.xml" />
 	 	<mapper resource="mybatis/mysql/ProfileSql.xml" />
 	 	<mapper resource="mybatis/mysql/Mypage.xml" />
+	 	<mapper resource="mybatis/mysql/QnaCommentSql.xml" /> 
+	 	<mapper resource="mybatis/mysql/FreeBoardSql.xml"/>
+	 	<mapper resource="mybatis/mysql/FreeBoardCommentSql.xml"/>
+	 	<mapper resource="mybatis/mysql/WithBoardSql.xml" />  
+	 	<mapper resource="mybatis/mysql/BucketSql.xml" /> 
+	 	<mapper resource="mybatis/mysql/OffBucketSql.xml" />
 	 </mappers>
 </configuration>
