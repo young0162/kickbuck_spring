@@ -28,6 +28,13 @@ public class QnaCommetController {
 		return qcservice.getAllDatas(num);
 	}
 	
+	@RequestMapping(value="/qnacomment/commentcount", method=RequestMethod.GET)
+	public int getCommentCount(int num)
+	{
+		System.out.println("react>>count");
+		return qcservice.getCommentCount(num);
+	}
+	
 	@PostMapping("/qnacomment/commentwrite")
 	public void insertComment(@RequestBody QnaCommentDto dto)
 	{

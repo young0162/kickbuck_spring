@@ -21,6 +21,12 @@ public class QnaCommentService {
 		return dao.getAllDatas(num);
 	}
 	
+	// 코멘트 갯수 구하기
+	public int getCommentCount(int num)
+	{
+		return dao.getCommentCount(num);
+	}
+	
 	// 댓글 등록
 	public void insertComment(QnaCommentDto dto)
 	{

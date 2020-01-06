@@ -18,6 +18,12 @@ public class QnaCommentDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("qnaCommentAllList", num);
 	}
 	
+	// 코멘트 갯수 구하기
+	public int getCommentCount(int num)
+	{
+		return getSqlSession().selectOne("qnaCommentCount", num);
+	}
+	
 	// 댓글 등록
 	public void insertComment(QnaCommentDto dto)
 	{
