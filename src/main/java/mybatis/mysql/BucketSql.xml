@@ -19,6 +19,14 @@
 	<select id="AllSelect" resultType="bdto">
 		select * from bucket where open = 'on'
 	</select>
+
+	<select id="SoloSelect" resultType="bdto">
+		select * from bucket where type = 'solo' and open = 'on'
+	</select>
+	
+	<select id="WithSelect" resultType="bdto">
+		select * from bucket where type = 'with' and open = 'on'
+	</select>
 	
 	<select id="OneSelect" resultType="bdto" parameterType="int">
 		select * from bucket where num = #{num}
@@ -33,6 +41,10 @@
 	</update>
 	
 	<select id="OffSelect" resultType="bdto">
-		select * from bucket where type = 'off'
+		select * from bucket where type = 'off' and open = 'on'
+	</select>
+	
+	<select id="OffOneSelect" parameterType="int" resultType="bdto">
+		select * from bucket where type = 'off' and num = #{num}
 	</select>
 </mapper>

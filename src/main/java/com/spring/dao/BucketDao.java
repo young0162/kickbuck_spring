@@ -59,4 +59,21 @@ public class BucketDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("OffSelect");
 	}
 	
+	public BucketDto OffOneSelect(int num)
+	{
+		return getSqlSession().selectOne("OffOneSelect",num);
+	}
+	
+	public List<BucketDto> SoloSelect()
+	{
+		return getSqlSession().selectList("SoloSelect");
+	}
+	
+	public List<BucketDto> WithSelect()
+	{
+		return getSqlSession().selectList("WithSelect");
+	}
+	
+	
+	
 }

@@ -107,4 +107,24 @@ public class BucketController {
 		return bservice.OffSelect();
 	}
 	
+	@RequestMapping("/offoneselect")
+	public BucketDto OffOneSelect(@RequestParam int num)
+	{
+		return bservice.OffOneSelect(num);
+	}
+	
+	
+	@RequestMapping("/soloselect")
+	public List<BucketDto> SoloSelect()
+	{
+		return bservice.SoloSelect();
+	}
+	
+	
+	@RequestMapping("/withselect")
+	public List<BucketDto> WithSelect()
+	{
+		return bservice.WithSelect();
+	}
+	
 }

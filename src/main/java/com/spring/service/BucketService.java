@@ -55,4 +55,20 @@ public class BucketService {
 		return dao.OffSelect();
 	}
 	
+	public BucketDto OffOneSelect(int num)
+	{
+		return dao.OffOneSelect(num);
+	}
+	
+	
+	public List<BucketDto> SoloSelect()
+	{
+		return dao.SoloSelect();
+	}
+	
+	public List<BucketDto> WithSelect()
+	{
+		return dao.WithSelect();
+	}
+	
 }
