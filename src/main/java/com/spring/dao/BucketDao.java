@@ -1,6 +1,8 @@
 package com.spring.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
@@ -15,19 +17,36 @@ public class BucketDao extends SqlSessionDaoSupport{
 		getSqlSession().insert("bucketInsert",dto);
 	}
 	
-	public void bucketWithUp(int num)
+	public void bucketWithUp(String user_name, String num)
 	{
-		getSqlSession().update("bucketWithUp",num);
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("user_name",user_name);
+		map.put("num",num);
+		
+		getSqlSession().update("bucketWithUp",map);
 	}
 	
-	public void bucketLikeUp(int num)
+	public void bucketLikeUp(String user_name, String num)
 	{
-		getSqlSession().update("bucketLikeUp",num);
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("user_name",user_name);
+		map.put("num",num);
+		getSqlSession().update("bucketLikeUp",map);
 	}
 	
 	public List<BucketDto> AllSelect()
 	{
 		return getSqlSession().selectList("AllSelect");
+	}
+	
+	public BucketDto OneSelect(int num) 
+	{
+		return getSqlSession().selectOne("OneSelect",num);
+	}
+	
+	public List<BucketDto> SearchSelect(String keyword)
+	{
+		return getSqlSession().selectList("SearchSelect",keyword);
 	}
 	
 }
