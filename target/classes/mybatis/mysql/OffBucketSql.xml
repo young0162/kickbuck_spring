@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bucket">
+	
+	<insert id="offBucketComment" parameterType="offdto">
+		insert into offbucket values(0
+		,#{num},#{user_name},#{image},#{content},#{endday},now(),#{subject})
+	</insert>
+	
+	<select id="offBucketAllList" resultType="bdto">
+		select * from bucket where type=off
+	</select>
+	
+	<select id="offBucketSelectOne" parameterType="int" resultType="bdto">
+		select * from bucket where num=#{num}
+	</select>
+	
+	<select id="offBucketCommentAllList" parameterType="int" resultType="offdto">
+		select * from offbucket where num=#{num} order by pk desc 
+	</select>
+</mapper>
