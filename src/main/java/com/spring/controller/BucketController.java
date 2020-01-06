@@ -95,4 +95,16 @@ public class BucketController {
 		return bservice.SearchSelect(keyword);
 	}
 	
+	@RequestMapping(value="/offupdate" , method = RequestMethod.GET)
+	public void OffUpdate(@RequestParam int num)
+	{
+		bservice.OffUpdate(num);
+	}
+	
+	@RequestMapping("/offselect")
+	public List<BucketDto> OffSelect()
+	{
+		return bservice.OffSelect();
+	}
+	
 }

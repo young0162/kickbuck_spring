@@ -27,4 +27,12 @@
 	<select id="SearchSelect" parameterType="String" resultType="bdto">
 		select * from bucket where content like concat('%',#{keyword},'%')
 	</select>
+	
+	<update id="OffUpdate" parameterType="int">
+		update bucket set type = 'off' where num = #{num}
+	</update>
+	
+	<select id="OffSelect" resultType="bdto">
+		select * from bucket where type = 'off'
+	</select>
 </mapper>

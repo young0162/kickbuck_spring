@@ -49,4 +49,14 @@ public class BucketDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("SearchSelect",keyword);
 	}
 	
+	public void OffUpdate(int num)
+	{
+		getSqlSession().update("OffUpdate",num);
+	}
+	
+	public List<BucketDto> OffSelect()
+	{
+		return getSqlSession().selectList("OffSelect");
+	}
+	
 }

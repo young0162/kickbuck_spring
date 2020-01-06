@@ -45,4 +45,14 @@ public class BucketService {
 		return dao.SearchSelect(keyword);
 	}
 	
+	public void OffUpdate(int num)
+	{
+		dao.OffUpdate(num);
+	}
+	
+	public List<BucketDto> OffSelect()
+	{
+		return dao.OffSelect();
+	}
+	
 }
