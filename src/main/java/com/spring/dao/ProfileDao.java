@@ -22,6 +22,10 @@ public class ProfileDao extends SqlSessionDaoSupport {
 	{
 		getSqlSession().update("profileUpdate", dto); 
 	}
+	
+	public ProfileDto getImage(int num) {
+		return getSqlSession().selectOne("profileImage",num);
+	}
 }
 
 

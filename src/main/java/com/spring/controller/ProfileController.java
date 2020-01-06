@@ -37,7 +37,7 @@ public class ProfileController {
 		return "DB Save Success!!";
 	}
 	
-	@RequestMapping(value = "/select",method=RequestMethod.GET)
+	@RequestMapping(value = "/profile/select",method=RequestMethod.GET)
 	public ProfileDto selectMember(@RequestParam int num){
 		System.out.println("react>>select>>"+num);
 		return pService.getData(num);
@@ -45,14 +45,14 @@ public class ProfileController {
 
 	//수정
 	@RequestMapping("/profile/update")
-	public void updateMember(@RequestBody ProfileDto dto)
+	public void updateProfile(@RequestBody ProfileDto dto)
 	{
 		System.out.println("react>>update"+dto);
 		pService.updateProfile(dto);
 	}
 	
 	//이미지 업로드
-	@RequestMapping(value = "/save",consumes = {"multipart/form-data"},
+	@RequestMapping(value = "/profile/upload",consumes = {"multipart/form-data"},
 			method = RequestMethod.POST)
 	public String imageUpload(HttpServletRequest request,
 			@RequestParam MultipartFile uploadFile)
@@ -67,6 +67,21 @@ public class ProfileController {
 		
 		return "success";
 	}
+	
+	//react로부터 데이터 전송받기
+	@RequestMapping("/profile/save")
+	public String submit(@RequestBody ProfileDto dto){
+		System.out.println("react>>save>>");
+		System.out.println(dto);
+		return "DB Save Success!!";
+	}
+	
+	@RequestMapping(value = "/profile/image",method=RequestMethod.GET)
+	public ProfileDto selectImage(@RequestParam int num){
+		System.out.println("react>>image>>"+num);
+		return pService.getData(num);
+	}
+
 }
 
 

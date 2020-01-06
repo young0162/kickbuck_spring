@@ -27,6 +27,10 @@ public class ProfileService {
 	{
 		dao.updateProfile(dto); 
 	}
+	
+	public ProfileDto getImage(int num) {
+		return dao.getImage(num);
+	}
 }
 
 

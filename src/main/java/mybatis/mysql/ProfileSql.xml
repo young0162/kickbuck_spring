@@ -12,4 +12,7 @@
 		update profile set email1=#{email1},email2=#{email2},user_name=#{user_name}
 		,password=#{password},phone=#{phone},image=#{image},gaipday=now() where num=#{num}
 	</update>
+	<select id="profileImage" parameterType="pdto" resultType="int">
+		select image from profile where num=#{num}
+	</select>
 </mapper>

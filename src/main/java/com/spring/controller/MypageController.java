@@ -19,9 +19,13 @@ public class MypageController {
 	private MypageService yService;
 	
 	@RequestMapping("/mypage/list")
-	public List<MypageDto> list(){
+	public List<MypageDto> getAllList(
+			@RequestParam(value = "start", defaultValue = "0") int start)
+	{
 		System.out.println("react>>list");
-		return yService.getAllList();
+System.out.println("start="+start);
+		
+		return yService.getAllList(start);
 	}
 	
 	@RequestMapping("/mypage/select")

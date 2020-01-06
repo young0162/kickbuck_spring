@@ -14,8 +14,8 @@ public class MypageService {
 	@Autowired
 	private MypageDao dao;
 	
-	public List<MypageDto> getAllList(){
-		return dao.getAllList();
+	public List<MypageDto> getAllList(int start){
+		return dao.getAllList(start);
 	}
 	
 	public MypageDto getData(int num) {
