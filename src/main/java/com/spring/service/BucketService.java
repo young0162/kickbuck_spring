@@ -20,19 +20,29 @@ public class BucketService {
 		dao.insertBucket(dto);
 	}
 	
-	public void bucketWithUp(int num)
+	public void bucketWithUp(String user_name, String num)
 	{
-		dao.bucketWithUp(num);
+		dao.bucketWithUp(user_name, num);
 	}
 	
-	public void bucketLiekUp(int num)
+	public void bucketLiekUp(String user_name, String num)
 	{
-		dao.bucketLikeUp(num);
+		dao.bucketLikeUp(user_name, num);
 	}
 	
 	public List<BucketDto> AllSelect()
 	{
 		return dao.AllSelect();
+	}
+	
+	public BucketDto OneSelect(int num)
+	{
+		return dao.OneSelect(num);
+	}
+	
+	public List<BucketDto> SearchSelect(String keyword)
+	{
+		return dao.SearchSelect(keyword);
 	}
 	
 }

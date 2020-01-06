@@ -20,7 +20,7 @@
 	
 	<insert id="boardInsert" parameterType="fdto">
 		insert into freeBoard values(0
-		,#{title},#{content},#{imagename},#{writer},0,now())
+		,#{title},#{content},#{imagename},#{user_name},0,now())
 	</insert>
 	
 	<delete id="boardDelete" parameterType="int">
@@ -28,7 +28,7 @@
 	</delete>
 	
 	<update id="boardUpdate" parameterType="fdto">
-		update freeBoard set title=#{title},content=#{content},imagename=#{imagename},writer=#{writer},writeday=now() where num=#{num}
+		update freeBoard set title=#{title},content=#{content},imagename=#{imagename},user_name=#{user_name},writeday=now() where num=#{num}
 	</update>
 	
 

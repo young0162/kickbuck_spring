@@ -22,4 +22,16 @@ public class MemberService {
 		return dao.loginCheck(user_name, password);
 	}
 	
+	public int emailCheck(String email)
+	{
+		return dao.emailCheck(email);
+	}
+	
+	public int UserNameCheck(String user_name)
+	{
+		return dao.UserNameCheck(user_name);
+	}
+	
+	
+	
 }

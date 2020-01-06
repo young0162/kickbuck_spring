@@ -36,6 +36,23 @@ public class MemberController {
 		
 		return num;
 	}
-
+	
+	@RequestMapping(value="/emailcheck", method = RequestMethod.GET)
+	public int emailCheck(@RequestParam String email)
+	{
+		System.out.println(email);
+		return mservice.emailCheck(email); 
+	}
+	
+	@RequestMapping(value="/usernamecheck", method = RequestMethod.GET)
+	public int UserNameCheck(@RequestParam String user_name)
+	{
+		System.out.println(user_name);
+		System.out.println(mservice.UserNameCheck(user_name));
+		return mservice.UserNameCheck(user_name);
+		
+	}
+	
+	
 	
 }

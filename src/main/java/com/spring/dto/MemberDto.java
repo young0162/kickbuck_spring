@@ -6,11 +6,9 @@ import java.text.SimpleDateFormat;
 public class MemberDto {
 
 	private int num;
-	private String email1;
-	private String email2;
+	private String email;
 	private String user_name;
 	private String password;
-	private String phone;
 	private Timestamp gaipday;
 	
 	
@@ -20,29 +18,11 @@ public class MemberDto {
 	public void setNum(int num) {
 		this.num = num;
 	}
-	public String getEmail1() {
-		return email1;
-	}
-	public void setEmail1(String email1) {
-		this.email1 = email1;
-	}
-	public String getEmail2() {
-		return email2;
-	}
-	public void setEmail2(String email2) {
-		this.email2 = email2;
-	}
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
 	}
 	public Timestamp getGaipday() {
 		return gaipday;
@@ -66,12 +46,19 @@ public class MemberDto {
 	public void setUser_name(String user_name) {
 		this.user_name = user_name;
 	}
-	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	@Override
 	public String toString() {
-		return "MemberDto [num=" + num + ", email1=" + email1 + ", email2=" + email2 + ", user_name=" + user_name
-				+ ", password=" + password + ", phone=" + phone + ", gaipday=" + gaipday + "]";
+		return "MemberDto [num=" + num + ", email=" + email + ", user_name=" + user_name + ", password=" + password
+				+ ", gaipday=" + gaipday + "]";
 	}
+	
+
 	
 
 }
