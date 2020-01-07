@@ -40,15 +40,18 @@
 		select * from bucket where content like concat('%',#{keyword},'%')
 	</select>
 	
+	
+	<!-- -----------////------------------------------------------------------------------------------------------ -->
+	
 	<select id="mypageMyBucketList" resultType="bdto" parameterType="String">
 		select * from bucket where user_name=#{user_name} order by num desc 
 	</select>
 	
-	<select id="mypageOurBucketList" resultType="bdto" parameterType="Map">
+	<select id="mypageOurBucketList" resultType="bdto" parameterType="String">
 		select * from bucket where user_name=#{user_name} and type='with' order by num desc 
 	</select>
 	
-	<select id="mypageStandbyBucketList" resultType="bdto" parameterType="Map">
+	<!-- <select id="mypageStandbyBucketList" resultType="bdto" parameterType="Map">
 		select * from bucket where user_name=#{user_name} and type=#{type} and withcount=10 order by num desc 
 	</select>
 	
@@ -59,8 +62,8 @@
 	<select id="mypageLikeBucketList" resultType="bdto"  parameterType="Map">
 		select * from bucket where user_name=#{user_name} and likecount=#{likecount} order by num desc 
 	</select>
-	
-	<update id="OffUpdate" parameterType="int">
+	 -->
+	<!-- <update id="OffUpdate" parameterType="int">
 		update bucket set type = 'off' where num = #{num}
 	</update>
 	
@@ -70,7 +73,7 @@
 	
 	<select id="OffOneSelect" parameterType="int" resultType="bdto">
 		select * from bucket where type = 'off' and num = #{num}
-	</select>
+	</select> -->
 </mapper>
 
 
