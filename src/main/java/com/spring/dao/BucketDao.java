@@ -74,20 +74,12 @@ public class BucketDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("WithSelect");
 	}
 	
-<<<<<<< Updated upstream
 	public BucketDto BucketWithCheck(int num) 
 	{
 		return getSqlSession().selectOne("BucketWithCheck",num);
 	}
 
 	
-=======
-	/*
-	 * <!--
-	 * -----------////--------------------------------------------------------------
-	 * ---------------------------- -->
-	 */
->>>>>>> Stashed changes
 	
 	
 	//나

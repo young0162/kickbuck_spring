@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="guest">
-	<select id="guestTotalcount" resultType="int">
-		select count(*) from student
+	<select id="getGuestList" resultType="gdto">
+		select * from bmr order by num desc
 	</select>
+
+	<insert id="GuestInsert" parameterType="gdto">
+		insert into bmr (num, nickname, contents, writeday)
+		values (0, #{nickname}, #{contents}, now())
+	</insert>
 </mapper>
