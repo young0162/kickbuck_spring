@@ -45,11 +45,32 @@ public class BucketService {
 	}
 
 	
-	//나
+	// 마이페이지 나의 버킷 관련  
 	public List<BucketDto> getMyList(String user_name)
 	{
 		return dao.getMyList(user_name);
 	}
+	
+	public void MyBucketDelte(int num)
+	{
+		dao.MyBucketDelte(num);
+	}
+	
+	
+	public List<BucketDto> MyOffBucketList(String user_name)
+	{
+		return dao.MyOffBucketList(user_name);
+	}
+	
+	
+	// 대기중인 나의 버킷 리스트 
+	public List<BucketDto> WaitMyBucket(String user_name)
+	{
+		return dao.WaitMyBucket(user_name);
+	}
+	
+	
+	
 	
 	//우리
 	public List<BucketDto> getOurList(String user_name)
@@ -85,6 +106,16 @@ public class BucketService {
 	public BucketDto BucketWithCheck(int num) 
 	{
 		return dao.BucketWithCheck(num);
+	}
+	
+	public List<BucketDto> MyLikeUpBucket(String user_name)
+	{
+		return dao.MyLikeUpBucket(user_name);
+	}
+	
+	public void WaitComplete(int num)
+	{
+		dao.WaitComplete(num);
 	}
 	
 }

@@ -40,16 +40,26 @@
 		select * from bucket where content like concat('%',#{keyword},'%')
 	</select>
 	
-	
+	<!-- 마이페이지 나의 버킷 관련  -->
 	<select id="mypageMyBucketList" resultType="bdto" parameterType="String">
-		select * from bucket where user_name=#{user_name} order by num desc 
+		select * from bucket where user_name = #{user_name} and type = 'solo' order by num desc 
+	</select>
+	
+	<update id="MyBucketDelte" parameterType="int">
+		delete from bucket where num = #{num}
+	</update> 
+	
+	<select id="MyOffBucketList" resultType="bdto" parameterType="String">
+		select * from bucket where user_name = #{user_name} and type = 'off' order by num desc
 	</select>
 	
 	<select id="mypageOurBucketList" resultType="bdto" parameterType="String">
-		select * from bucket where with_user like concat('%',#{user_name},'%') order by num desc
+		select * from bucket where type = 'with' and with_user like concat('%',#{user_name},'%') order by num desc
 	</select>
 	
-
+	<select id="WaitMyBucket" parameterType="String" resultType="bdto">
+		select * from bucket where user_name = #{user_name} and  withcount >= 10 and type = 'solo'
+	</select>
 	
 	<update id="OffUpdate" parameterType="int">
 		update bucket set type = 'off' where num = #{num}
@@ -62,6 +72,14 @@
 	<select id="OffOneSelect" parameterType="int" resultType="bdto">
 		select * from bucket where type = 'off' and num = #{num}
 	</select>
+	
+	<select id="MyLikeUpBucket" parameterType="String" resultType="bdto">
+		select * from bucket where with_user like concat('%',#{user_name},'%') order by num desc
+	</select>
+	
+	<update id="WaitComplete" parameterType="int">
+		update bucket set type = 'with' where num = #{num}
+	</update>
 </mapper>
 
 

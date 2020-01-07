@@ -94,25 +94,44 @@ public class BucketController {
 
 	
 	
-	//나
+	// 마이페이지 나의 버킷 관련  
 	@RequestMapping("/mypage/mylist")
-	public List<BucketDto> getMyList(
-			@RequestParam String user_name)
+	public List<BucketDto> getMyList(@RequestParam String user_name)
 	{
 
 		return bservice.getMyList(user_name);
 	}
 	
-	  //우리
+	@RequestMapping("/myage/mydelete")
+	public void MyBucketDelte(@RequestParam int num)
+	{
+		bservice.MyBucketDelte(num);
+	}
+	
+	
+	@RequestMapping("/mypage/offlist")
+	public List<BucketDto> MyOffBucketList(@RequestParam String user_name)
+	{
+		return bservice.MyOffBucketList(user_name);
+	}
+	
+	
+	//대기중인 나의 버킷 리스트
+	@RequestMapping("/mypage/waitlist")
+	public List<BucketDto> WaitMyBucket(@RequestParam String user_name)
+	{
+		return bservice.WaitMyBucket(user_name);
+	}
+	
+	
+	
+	//우리
  
-	  @RequestMapping(value="/mypage/ourlist", method = RequestMethod.GET) 
-	  public List<BucketDto> getOurList(@RequestParam String user_name)
-	  {
-		  
-		  System.out.println("ourlist="+user_name);
-		  
-		  return  bservice.getOurList(user_name);
-	  }
+	@RequestMapping(value="/mypage/ourlist", method = RequestMethod.GET) 
+	public List<BucketDto> getOurList(@RequestParam String user_name)
+	{
+		return  bservice.getOurList(user_name);
+	}
 	  
 	
 	 @RequestMapping(value="/offupdate" , method = RequestMethod.GET) 
@@ -150,6 +169,19 @@ public class BucketController {
 	 { 
 		 return bservice.BucketWithCheck(num);
 	 }
+	 
+	 @RequestMapping("/mylikeupbucket")
+	 public List<BucketDto> MyLikeUpBucket(@RequestParam String user_name)
+	 {
+		 return bservice.MyLikeUpBucket(user_name);
+	 }
+	 
+	 @RequestMapping("/waitcomplete")
+	 public void WaitComplete(@RequestParam int num)
+	 {
+		 bservice.WaitComplete(num);
+	 }
+	 
 }
 
 

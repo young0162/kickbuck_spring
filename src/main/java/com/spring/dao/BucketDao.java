@@ -83,16 +83,41 @@ public class BucketDao extends SqlSessionDaoSupport{
 	
 
 	
-	//나
+	// 마이페이지 나의 버킷 관련  
 	public List<BucketDto> getMyList(String user_name)
 	{
 		return getSqlSession().selectList("mypageMyBucketList",user_name);
 	}
+	public void MyBucketDelte(int num)
+	{
+		getSqlSession().delete("MyBucketDelte",num);
+	}
 	
-	//우리
+	public List<BucketDto> MyOffBucketList(String user_name)
+	{
+		return getSqlSession().selectList("MyOffBucketList",user_name);
+	}
+	
+	
+	// 대기중인 나의 버킷 리스트 
+	public List<BucketDto> WaitMyBucket(String user_name)
+	{
+		return getSqlSession().selectList("WaitMyBucket",user_name);
+	}
+	
 	public List<BucketDto> getOurList(String user_name)
 	{
 		return getSqlSession().selectList("mypageOurBucketList",user_name);
+	}
+	
+	public List<BucketDto> MyLikeUpBucket(String user_name)
+	{
+		return getSqlSession().selectList("MyLikeUpBucket",user_name);
+	}
+	
+	public void WaitComplete(int num)
+	{
+		getSqlSession().update("WaitComplete");
 	}
 
 }
