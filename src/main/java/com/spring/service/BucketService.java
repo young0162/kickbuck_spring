@@ -69,6 +69,33 @@ public class BucketService {
 	{
 		dao.getlikeList(user_name,lilecount);
 	}
+	
+	public void OffUpdate(int num)
+	{
+		dao.OffUpdate(num);
+	}
+	
+	public List<BucketDto> OffSelect()
+	{
+		return dao.OffSelect();
+	}
+	
+	public BucketDto OffOneSelect(int num)
+	{
+		return dao.OffOneSelect(num);
+	}
+	
+	
+	public List<BucketDto> SoloSelect()
+	{
+		return dao.SoloSelect();
+	}
+	
+	public List<BucketDto> WithSelect()
+	{
+		return dao.WithSelect();
+	}
+	
 }
 
 

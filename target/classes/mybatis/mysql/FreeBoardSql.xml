@@ -3,7 +3,7 @@
 <mapper namespace="freeboard">
 	
 	<select id="boardAllList" resultType="fdto" parameterType="int">
-		select * from freeBoard order by num desc limit #{start}, 15 
+		select * from freeBoard order by num desc limit #{start}, 10 
 	</select>
 	
 	<select id="boardCount" resultType="int">

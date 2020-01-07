@@ -8,14 +8,14 @@
 	</insert>
 	
 	<select id="offBucketAllList" resultType="bdto">
-		select * from bucket where type=off
+		select * from bucket where type = 'off'
 	</select>
 	
 	<select id="offBucketSelectOne" parameterType="int" resultType="bdto">
-		select * from bucket where num=#{num}
+		select * from bucket where num = #{num}
 	</select>
 	
 	<select id="offBucketCommentAllList" parameterType="int" resultType="offdto">
-		select * from offbucket where num=#{num} order by pk desc 
+		select * from offbucket where num = #{num} order by pk desc 
 	</select>
 </mapper>

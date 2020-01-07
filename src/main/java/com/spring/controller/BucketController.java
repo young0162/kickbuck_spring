@@ -150,6 +150,38 @@ public class BucketController {
 		bservice.getlikeList(user_name,lilecount);
 	}
 	
+	@RequestMapping(value="/offupdate" , method = RequestMethod.GET)
+	public void OffUpdate(@RequestParam int num)
+	{
+		bservice.OffUpdate(num);
+	}
+	
+	@RequestMapping("/offselect")
+	public List<BucketDto> OffSelect()
+	{
+		return bservice.OffSelect();
+	}
+	
+	@RequestMapping("/offoneselect")
+	public BucketDto OffOneSelect(@RequestParam int num)
+	{
+		return bservice.OffOneSelect(num);
+	}
+	
+	
+	@RequestMapping("/soloselect")
+	public List<BucketDto> SoloSelect()
+	{
+		return bservice.SoloSelect();
+	}
+	
+	
+	@RequestMapping("/withselect")
+	public List<BucketDto> WithSelect()
+	{
+		return bservice.WithSelect();
+	}
+	
 }
 
 
