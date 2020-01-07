@@ -45,13 +45,6 @@ public class BucketService {
 	}
 
 	
-	/*
-	 * <!--
-	 * -----------////--------------------------------------------------------------
-	 * ---------------------------- -->
-	 */
-	
-	
 	//나
 	public List<BucketDto> getMyList(String user_name)
 	{
@@ -64,27 +57,31 @@ public class BucketService {
 		return dao.getOurList(user_name);
 	}
 	
-	
-	/*
-	 * dao.getOurList(user_name,type); } //대기 public void getStandbyList(String
-	 * user_name,String type,String withcount) {
-	 * dao.getStandbyList(user_name,type,withcount); } //오프 public void
-	 * getOffList(String user_name,String type) { dao.getOffList(user_name,type); }
-	 * //공감 public void getlikeList(String user_name,String lilecount) {
-	 * dao.getlikeList(user_name,lilecount); }
-	 * 
-	 * public void OffUpdate(int num) { dao.OffUpdate(num); }
-	 * 
-	 * public List<BucketDto> OffSelect() { return dao.OffSelect(); }
-	 * 
-	 * public BucketDto OffOneSelect(int num) { return dao.OffOneSelect(num); }
-	 * 
-	 * 
-	 * public List<BucketDto> SoloSelect() { return dao.SoloSelect(); }
-	 * 
-	 * public List<BucketDto> WithSelect() { return dao.WithSelect(); }
-	 */
-	
+	public void OffUpdate(int num) 
+	{ 
+		dao.OffUpdate(num); 
+	}
+	  
+	public List<BucketDto> OffSelect()
+    {
+	    return dao.OffSelect(); 
+    }
+	  
+	public BucketDto OffOneSelect(int num) 
+	{ 
+		return dao.OffOneSelect(num); 
+	}
+	 
+	public List<BucketDto> SoloSelect() 
+	{ 
+		return dao.SoloSelect(); 
+	}
+	  
+	public List<BucketDto> WithSelect() 
+	{
+		return dao.WithSelect(); 
+	}
+	  
 	public BucketDto BucketWithCheck(int num) 
 	{
 		return dao.BucketWithCheck(num);
