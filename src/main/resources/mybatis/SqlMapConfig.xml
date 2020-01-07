@@ -5,7 +5,6 @@
 	 	 <typeAlias type="com.spring.dto.QnADto" alias="qdto"/>
 	 	 <typeAlias type="com.spring.dto.QnaCommentDto" alias="qcdto"/>
 	 	 <typeAlias type="com.spring.dto.MemberDto" alias="mdto"/>
-	 	 <typeAlias type="com.spring.dto.ProfileDto" alias="pdto"/>
 	 	 <typeAlias type="com.spring.dto.MypageDto" alias="ydto"/>
 	 	 <typeAlias type="com.spring.dto.FreeBoardDto" alias="fdto"/>
 	 	 <typeAlias type="com.spring.dto.FreeBoardCommentDto" alias="fcdto"/>
@@ -16,7 +15,6 @@
 	 <mappers>
 	 	<mapper resource="mybatis/mysql/QnASql.xml" />
 	 	<mapper resource="mybatis/mysql/MemberSql.xml" />
-	 	<mapper resource="mybatis/mysql/ProfileSql.xml" />
 	 	<mapper resource="mybatis/mysql/Mypage.xml" />
 	 	<mapper resource="mybatis/mysql/QnaCommentSql.xml" /> 
 	 	<mapper resource="mybatis/mysql/FreeBoardSql.xml"/>

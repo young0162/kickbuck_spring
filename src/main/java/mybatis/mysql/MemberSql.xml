@@ -17,4 +17,17 @@
 		select count(*) from member where  user_name = #{user_name}
 	</select>
 	
+	<select id="profileSelect" parameterType="int" resultType="mdto">
+		select * from member where num=#{num}
+	</select>
+	
+	<update id="profileUpdate" parameterType="mdto">
+		update member set email=#{email},user_name=#{user_name}
+		,password=#{password},profileimg=#{profileimg},gaipday=now() where num=#{num}
+	</update>
+	
+	<select id="profileImage" parameterType="mdto" resultType="int">
+		select profileimg from member where num=#{num}
+	</select>
+	
 </mapper>
