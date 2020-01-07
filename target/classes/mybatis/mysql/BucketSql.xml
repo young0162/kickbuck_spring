@@ -49,17 +49,18 @@
 		select * from bucket where with_user like concat('%',#{user_name},'%') order by num desc
 	</select>
 	
+
 	<!--  <select id="mypageStandbyBucketList" resultType="bdto" parameterType="Map">
 		select * from bucket where user_name=#{user_name} and type=#{type} and withcount=10 order by num desc 
-	</select>
+	</select> -->
 	
-	<select id="mypageOffBucketList" resultType="bdto"  parameterType="Map">
+	 <select id="mypageOffBucketList" resultType="bdto"  parameterType="String">
 		select * from bucket where user_name=#{user_name} and type='off' order by num desc 
 	</select>
 	
-	<select id="mypageLikeBucketList" resultType="bdto"  parameterType="Map">
+	<!-- <select id="mypageLikeBucketList" resultType="bdto"  parameterType="Map">
 		select * from bucket where user_name=#{user_name} and likecount=#{likecount} order by num desc 
-	</select> -->
+	</select>  -->
 	
 	<!-- <update id="OffUpdate" parameterType="int">
 		update bucket set type = 'off' where num = #{num}

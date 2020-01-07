@@ -50,9 +50,6 @@ public class OffBucketController {
 			@RequestBody OffBucketDto dto)
 	
 	{
-		System.out.println("react>>offBucketCommentAdd");
-		System.out.println("확인"+dto);
-		
 		
 		offService.insertOffBucketComment(dto);
 		
@@ -63,9 +60,6 @@ public class OffBucketController {
 	@RequestMapping("/bucket/bucketlist")
 	public List<BucketDto> getOffBucketAllDatas()
 	{
-		
-		System.out.println("offbucketlist");
-		
 		return offService.getOffBucketList();
 	}
 	
@@ -73,9 +67,6 @@ public class OffBucketController {
 	@RequestMapping("/bucket/offbucketcommentlist")
 	public List<OffBucketDto> getOffBucketcommentAllDatas(@RequestParam int num)
 	{
-		
-		System.out.println("offbucketcommentlist");
-		
 		return offService.getOffBucketCommentList(num);
 	}
 	
@@ -83,8 +74,7 @@ public class OffBucketController {
 	@RequestMapping("/bucket/detail")
 	public BucketDto getBucketData(
 			@RequestParam int num)
-	{
-		System.out.println("bucketdatail="+num);
+	{	
 		return offService.getBucketData(num);
 	}
 	
@@ -105,7 +95,6 @@ public class OffBucketController {
 	public void DeleteOffBucketComment(
 			@RequestParam int pk)
 	{
-		System.out.println("react>>>offBucketCommentdelete>>"+pk);
 		
 		offService.DeleteOffBucketComment(pk);
 	}
@@ -115,12 +104,10 @@ public class OffBucketController {
 	   public OffBucketDto getOffBucketCommentData(
 	         @RequestParam int pk)
 	   {
-	      System.out.println("react>>offbucketCommentData"+pk);
-	      
+	            
 	      System.out.println(offService.getOffBucketCommentData(pk));
 	      
 	      return offService.getOffBucketCommentData(pk);
 	   }
 
-	
 }
