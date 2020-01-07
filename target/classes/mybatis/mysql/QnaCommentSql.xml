@@ -9,6 +9,11 @@
 		select * from qnacomment where num=#{num} order by group_num asc, writeday asc
 	</select>
 	
+	<!-- 댓글의 총 갯수 구하기 -->
+	<select id="qnaCommentCount" resultType="int" parameterType="int">
+		select count(*) from qnacomment where num=#{num}
+	</select>
+	
 	<!-- 댓글 등록 -->
 	<insert id="qnaCommentInsert" parameterType="qcdto">
 		insert into qnacomment (comment_num, num, user_name, comment, writeday) 
