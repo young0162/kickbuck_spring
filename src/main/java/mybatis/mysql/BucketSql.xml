@@ -16,6 +16,10 @@
   		where num = #{num} and like_user not like concat('%',#{user_name},'%')
 	</update>
 	
+	<select id="BucketWithCheck" parameterType="int" resultType="bdto">
+		select with_user,writeday from bucket where num = #{num} 
+	</select>
+	
 	<select id="AllSelect" resultType="bdto">
 		select * from bucket where open = 'on'
 	</select>

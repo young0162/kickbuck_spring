@@ -71,4 +71,9 @@ public class BucketService {
 		return dao.WithSelect();
 	}
 	
+	public BucketDto BucketWithCheck(int num) 
+	{
+		return dao.BucketWithCheck(num);
+	}
+	
 }

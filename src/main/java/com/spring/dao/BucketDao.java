@@ -74,6 +74,12 @@ public class BucketDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("WithSelect");
 	}
 	
+	public BucketDto BucketWithCheck(int num) 
+	{
+		return getSqlSession().selectOne("BucketWithCheck",num);
+	}
+
+	
 	
 	
 }

@@ -113,7 +113,6 @@ public class BucketController {
 		return bservice.OffOneSelect(num);
 	}
 	
-	
 	@RequestMapping("/soloselect")
 	public List<BucketDto> SoloSelect()
 	{
@@ -125,6 +124,12 @@ public class BucketController {
 	public List<BucketDto> WithSelect()
 	{
 		return bservice.WithSelect();
+	}
+	
+	@RequestMapping(value="/bucketwithcheck", method = RequestMethod.GET)
+	public BucketDto BucketWithCheck(@RequestParam int num)
+	{
+		return bservice.BucketWithCheck(num);
 	}
 	
 }
