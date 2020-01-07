@@ -46,7 +46,7 @@ public class FreeBoardController {
          @RequestParam(value = "start", defaultValue = "0") int start)
    {
       
-      System.out.println("start="+start);
+      
       
       return fService.getAllDatas(start);
    }
@@ -54,7 +54,7 @@ public class FreeBoardController {
    @RequestMapping("/community/freeboardlist/count")
    public void FreeBoardCount(int count)
    {
-      System.out.println("list>>count"+count);
+  
       
       fService.FreeBoardCount(count);
    }
@@ -63,7 +63,7 @@ public class FreeBoardController {
    public FreeBoardDto select(
          @RequestParam int num)
    {
-      System.out.println("react>>select"+num);
+     
       
       fService.updateReadCnt(num);//조회수 증가
       System.out.println(fService.getData(num));
@@ -75,9 +75,7 @@ public class FreeBoardController {
          @RequestBody FreeBoardDto dto)
    
    {
-      System.out.println("react>>add");
-      System.out.println("확인"+dto);
-      
+   
       
       fService.insertFreeBoard(dto);
       
@@ -88,8 +86,6 @@ public class FreeBoardController {
    public void deleteFreeBoard(
          @RequestParam int num)
    {
-      System.out.println("react>>>delete>>"+num);
-      
       fService.DeleteFreeBoard(num);
    }
    
@@ -97,7 +93,7 @@ public class FreeBoardController {
    public String updateFreeBoard(
          @RequestBody FreeBoardDto dto)
    {
-      System.out.println("react>>>update:"+dto);
+    
       
       fService.updateFreeBoard(dto);
       
