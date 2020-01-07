@@ -37,6 +37,21 @@ public class OffBucketService {
 	{
 		dao.insertOffBucketComment(dto);
 	}
-
+	//버킷 후기 수정
+	public void  updateOffBucketComment(OffBucketDto dto)
+	{
+		dao.updateOffBucketComment(dto);
+	}
+	//버킷 후기 삭제
+	public void DeleteOffBucketComment(int pk)
+	{
+		dao.DeleteOffBucketComment(pk);
+	}
+	//버킷후기데이타
+	public OffBucketDto getOffBucketCommentData(int pk)
+	{
+		return dao.getOffBucketCommentData(pk);
+	}
+	
 
 }

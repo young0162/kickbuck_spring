@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.spring.dto.BucketDto;
+import com.spring.dto.FreeBoardDto;
 import com.spring.dto.OffBucketDto;
 import com.spring.service.OffBucketService;
 
@@ -86,5 +87,40 @@ public class OffBucketController {
 		System.out.println("bucketdatail="+num);
 		return offService.getBucketData(num);
 	}
+	
+	//offbucketcommentupdate
+	@RequestMapping("/bucket/offbucketcomment/update")
+	public String updateOffBucketComment(
+			@RequestBody OffBucketDto dto)
+	{
+		System.out.println("react>>>offbucketcommentupdate:"+dto);
+		
+		offService.updateOffBucketComment(dto);
+		
+		return "DB update Success!!";	
+	}
+	
+	//offbucketcommentdelete
+	@RequestMapping(value = "/bucket/offbucketcomment/delete",method = RequestMethod.GET )
+	public void DeleteOffBucketComment(
+			@RequestParam int pk)
+	{
+		System.out.println("react>>>offBucketCommentdelete>>"+pk);
+		
+		offService.DeleteOffBucketComment(pk);
+	}
+	
+	//offbucketcommentData
+	@RequestMapping(value="/bucket/offbucketcommentData",method = RequestMethod.GET)
+	   public OffBucketDto getOffBucketCommentData(
+	         @RequestParam int pk)
+	   {
+	      System.out.println("react>>offbucketCommentData"+pk);
+	      
+	      System.out.println(offService.getOffBucketCommentData(pk));
+	      
+	      return offService.getOffBucketCommentData(pk);
+	   }
+
 	
 }

@@ -18,4 +18,16 @@
 	<select id="offBucketCommentAllList" parameterType="int" resultType="offdto">
 		select * from offbucket where num=#{num} order by pk desc 
 	</select>
+	
+	<update id="offBucketCommentUpdate" parameterType="offdto">
+		update offbucket set subject=#{subject},content=#{content},image=#{image},writeday=now() where pk=#{pk} 
+	</update>
+	
+	<delete id="offBucketCommentDelete" parameterType="int">
+		delete from offbucket where pk=#{pk}
+	</delete>
+	
+	<select id="offBucketCommentData" parameterType="int" resultType="offdto">
+		select * from offbucket where pk=#{pk}
+	</select>
 </mapper>

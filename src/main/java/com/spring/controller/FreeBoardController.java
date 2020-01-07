@@ -21,88 +21,88 @@ import spring.react.util.SpringFileWriter;
 @RestController
 @CrossOrigin
 public class FreeBoardController {
-	
-	@Autowired
-	private FreeBoardService fService;
-	
-	@RequestMapping(value = "/community/freeboardinsert/save",consumes = {"multipart/form-data"},
-			method = RequestMethod.POST)
-	public String imageUpload(HttpServletRequest request,
-			@RequestParam MultipartFile uploadFile)
-	{
-		System.out.println("react>>upload>>"+uploadFile.getOriginalFilename());
-		//업로드 경로
-		String path=request.getSession().getServletContext().getRealPath("/save");
-		System.out.println("path:"+path);
-		//이미지저장
-		SpringFileWriter sfw = new SpringFileWriter();
-		sfw.writeFile(uploadFile, path);
-		
-		return "success";
-	}
-	
-	@RequestMapping(value="/community/freeboardlist",method = RequestMethod.GET)
-	public List<FreeBoardDto> getAllDatas(
-			@RequestParam(value = "start", defaultValue = "0") int start)
-	{
-		
-		System.out.println("start="+start);
-		
-		return fService.getAllDatas(start);
-	}
-	
-	@RequestMapping("/community/freeboardlist/count")
-	public void FreeBoardCount(int count)
-	{
-		System.out.println("list>>count"+count);
-		
-		fService.FreeBoardCount(count);
-	}
-	
-	@RequestMapping(value="/community/freeboarddetail",method = RequestMethod.GET)
-	public FreeBoardDto select(
-			@RequestParam int num)
-	{
-		System.out.println("react>>select"+num);
-		
-		fService.updateReadCnt(num);//조회수 증가
-		System.out.println(fService.getData(num));
-		return fService.getData(num);
-	}
-	
-	@RequestMapping("community/freeboardinsert/input")
-	public String insertFreeBoard(
-			@RequestBody FreeBoardDto dto)
-	
-	{
-		System.out.println("react>>add");
-		System.out.println("확인"+dto);
-		
-		
-		fService.insertFreeBoard(dto);
-		
-		return "DB Save Success!!";
-	}
-	
-	@RequestMapping(value = "/community/freeboarddetail/delete",method = RequestMethod.GET )
-	public void deleteFreeBoard(
-			@RequestParam int num)
-	{
-		System.out.println("react>>>delete>>"+num);
-		
-		fService.DeleteFreeBoard(num);
-	}
-	
-	@RequestMapping("/community/freeboarddetail/update")
-	public String updateFreeBoard(
-			@RequestBody FreeBoardDto dto)
-	{
-		System.out.println("react>>>update:"+dto);
-		
-		fService.updateFreeBoard(dto);
-		
-		return "DB update Success!!";	
-	}
+   
+   @Autowired
+   private FreeBoardService fService;
+   
+   @RequestMapping(value = "/community/freeboardinsert/save",consumes = {"multipart/form-data"},
+         method = RequestMethod.POST)
+   public String imageUpload(HttpServletRequest request,
+         @RequestParam MultipartFile uploadFile)
+   {
+      System.out.println("react>>upload>>"+uploadFile.getOriginalFilename());
+      //업로드 경로
+      String path=request.getSession().getServletContext().getRealPath("/save");
+      System.out.println("path:"+path);
+      //이미지저장
+      SpringFileWriter sfw = new SpringFileWriter();
+      sfw.writeFile(uploadFile, path);
+      
+      return "success";
+   }
+   
+   @RequestMapping(value="/community/freeboardlist",method = RequestMethod.GET)
+   public List<FreeBoardDto> getAllDatas(
+         @RequestParam(value = "start", defaultValue = "0") int start)
+   {
+      
+      System.out.println("start="+start);
+      
+      return fService.getAllDatas(start);
+   }
+   
+   @RequestMapping("/community/freeboardlist/count")
+   public void FreeBoardCount(int count)
+   {
+      System.out.println("list>>count"+count);
+      
+      fService.FreeBoardCount(count);
+   }
+   
+   @RequestMapping(value="/community/freeboarddetail",method = RequestMethod.GET)
+   public FreeBoardDto select(
+         @RequestParam int num)
+   {
+      System.out.println("react>>select"+num);
+      
+      fService.updateReadCnt(num);//조회수 증가
+      System.out.println(fService.getData(num));
+      return fService.getData(num);
+   }
+   
+   @RequestMapping("community/freeboardinsert/input")
+   public String insertFreeBoard(
+         @RequestBody FreeBoardDto dto)
+   
+   {
+      System.out.println("react>>add");
+      System.out.println("확인"+dto);
+      
+      
+      fService.insertFreeBoard(dto);
+      
+      return "DB Save Success!!";
+   }
+   
+   @RequestMapping(value = "/community/freeboarddetail/delete",method = RequestMethod.GET )
+   public void deleteFreeBoard(
+         @RequestParam int num)
+   {
+      System.out.println("react>>>delete>>"+num);
+      
+      fService.DeleteFreeBoard(num);
+   }
+   
+   @RequestMapping("/community/freeboarddetail/update")
+   public String updateFreeBoard(
+         @RequestBody FreeBoardDto dto)
+   {
+      System.out.println("react>>>update:"+dto);
+      
+      fService.updateFreeBoard(dto);
+      
+      return "DB update Success!!";   
+   }
 
 
 }
