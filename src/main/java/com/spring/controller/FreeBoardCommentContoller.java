@@ -30,6 +30,13 @@ public class FreeBoardCommentContoller {
 		return fcService.getAllDatas(num);
 	}
 	
+	@RequestMapping(value="/freeboardcomment/commentcount", method=RequestMethod.GET)
+	public int getFreeCommentCount(int num)
+	{
+		System.out.println("react>>count");
+		return fcService.getFreeCommentCount(num);
+	}
+	
 	@PostMapping("/freeboardcomment/commentwrite")
 	public void insertComment(@RequestBody FreeBoardCommentDto dto)
 	{
