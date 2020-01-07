@@ -19,6 +19,12 @@ public class FreeBoardCommentService {
 			return dao.getAllDatas(num);
 		}
 		
+		// 코멘트 갯수 구하기
+		public int getFreeCommentCount(int num)
+		{
+			return dao.getFreeCommentCount(num);
+		}
+		
 		// 댓글 등록
 		public void insertComment(FreeBoardCommentDto dto)
 		{

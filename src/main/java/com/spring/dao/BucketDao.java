@@ -74,6 +74,20 @@ public class BucketDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("WithSelect");
 	}
 	
+<<<<<<< Updated upstream
+	public BucketDto BucketWithCheck(int num) 
+	{
+		return getSqlSession().selectOne("BucketWithCheck",num);
+	}
+
+	
+=======
+	/*
+	 * <!--
+	 * -----------////--------------------------------------------------------------
+	 * ---------------------------- -->
+	 */
+>>>>>>> Stashed changes
 	
 	
 	//나
@@ -81,39 +95,23 @@ public class BucketDao extends SqlSessionDaoSupport{
 	{
 		return getSqlSession().selectList("mypageMyBucketList",user_name);
 	}
-	//우리
-	public void getOurList(String user_name,String type)
-	{
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("user_name",user_name);
-		map.put("type",type);
-		getSqlSession().update("mypageOurBucketList",map);
-	}
-	//대기
-	public void getStandbyList(String user_name,String type,Integer withcount)
-	{
-		Map<String, Integer> map = new HashMap<String, Integer>();
-		map.put("user_name",user_name);
-		map.put("type",type);
-		map.put("withcount",withcount);
-		getSqlSession().update("mypageStandbyBucketList",map);
-	}
-	//오프
-	public void getOffList(String user_name,String type)
-	{
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("user_name",user_name);
-		map.put("type",type);
-		getSqlSession().update("mypageOffBucketList",map);
-	}
-	//공감
-	public void getlikeList(String user_name,Integer lilecount)
-	{
-		Map<String, Integer> map = new HashMap<String, Integer>();
-		map.put("user_name", user_name);
-		map.put("lilecount",lilecount);
-		getSqlSession().update("mypageLikeBucketList",map);
-	}	
+	/*
+	 * //우리 public void getOurList(String user_name,String type) { Map<String,
+	 * String> map = new HashMap<String, String>(); map.put("user_name",user_name);
+	 * map.put("type",type); getSqlSession().update("mypageOurBucketList",map); }
+	 * //대기 public void getStandbyList(String user_name,String type,Integer
+	 * withcount) { Map<String, Integer> map = new HashMap<String, Integer>();
+	 * map.put("user_name",user_name); map.put("type",type);
+	 * map.put("withcount",withcount);
+	 * getSqlSession().update("mypageStandbyBucketList",map); } //오프 public void
+	 * getOffList(String user_name,String type) { Map<String, String> map = new
+	 * HashMap<String, String>(); map.put("user_name",user_name);
+	 * map.put("type",type); getSqlSession().update("mypageOffBucketList",map); }
+	 * //공감 public void getlikeList(String user_name,Integer lilecount) {
+	 * Map<String, Integer> map = new HashMap<String, Integer>();
+	 * map.put("user_name", user_name); map.put("lilecount",lilecount);
+	 * getSqlSession().update("mypageLikeBucketList",map); }
+	 */
 }
 
 

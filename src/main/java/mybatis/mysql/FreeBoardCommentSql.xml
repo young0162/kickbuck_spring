@@ -7,6 +7,11 @@
 		select * from freeBoardComment where num=#{num} order by group_num asc, writeday asc
 	</select>
 	
+	<!-- 댓글의 총 갯수 구하기 -->
+	<select id="FreeBoardCommentCount" resultType="int" parameterType="int">
+		select count(*) from freeBoardComment where num=#{num}
+	</select>
+	
 	<!-- 댓글 등록 -->
 	<insert id="FreeBoardCommentInsert" parameterType="fcdto">
 		insert into freeBoardComment (comment_num, num, user_name, comment, writeday) 

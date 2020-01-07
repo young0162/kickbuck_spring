@@ -10,10 +10,16 @@ import com.spring.dto.FreeBoardCommentDto;
 @Repository
 public class FreeBoardCommentDao extends SqlSessionDaoSupport{
 	
-	// 코멘트 리스트
+		// 코멘트 리스트
 		public List<FreeBoardCommentDto> getAllDatas(int num)
 		{
 			return getSqlSession().selectList("FreeBoardCommentAllList", num);
+		}
+		
+		// 코멘트 갯수 구하기
+		public int getFreeCommentCount(int num)
+		{
+			return getSqlSession().selectOne("FreeBoardCommentCount", num);
 		}
 		
 		// 댓글 등록
