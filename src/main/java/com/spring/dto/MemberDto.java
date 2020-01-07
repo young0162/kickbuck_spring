@@ -9,6 +9,7 @@ public class MemberDto {
 	private String email;
 	private String user_name;
 	private String password;
+	private String profileimg;
 	private Timestamp gaipday;
 	
 	
@@ -24,6 +25,15 @@ public class MemberDto {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public String getImage() {
+		return profileimg;
+	}
+	public void setImage(String image) {
+		this.profileimg = image;
+	}
+	
+	
 	public Timestamp getGaipday() {
 		return gaipday;
 	}
@@ -55,10 +65,7 @@ public class MemberDto {
 	@Override
 	public String toString() {
 		return "MemberDto [num=" + num + ", email=" + email + ", user_name=" + user_name + ", password=" + password
-				+ ", gaipday=" + gaipday + "]";
+				+ ", profileimg=" + profileimg + ", gaipday=" + gaipday + "]";
 	}
 	
-
-	
-
 }

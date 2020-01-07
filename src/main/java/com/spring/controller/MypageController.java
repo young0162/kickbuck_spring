@@ -18,7 +18,7 @@ public class MypageController {
 	@Autowired
 	private MypageService yService;
 	
-	@RequestMapping("/mypage/list")
+	@RequestMapping("/list")
 	public List<MypageDto> getAllList(
 			@RequestParam(value = "start", defaultValue = "0") int start)
 	{
@@ -28,7 +28,7 @@ System.out.println("start="+start);
 		return yService.getAllList(start);
 	}
 	
-	@RequestMapping("/mypage/select")
+	@RequestMapping("/select")
 	public MypageDto select(@RequestParam int num){
 		return yService.getData(num);
 	}

@@ -27,4 +27,48 @@
 	<select id="SearchSelect" parameterType="String" resultType="bdto">
 		select * from bucket where content like concat('%',#{keyword},'%')
 	</select>
+	
+	<select id="mypageMyBucketList" resultType="bdto" parameterType="String">
+		select * from bucket where user_name=#{user_name} order by num desc 
+	</select>
+	
+	<select id="mypageOurBucketList" resultType="bdto" parameterType="Map">
+		select * from bucket where user_name=#{user_name} and type='with' order by num desc 
+	</select>
+	
+	<select id="mypageStandbyBucketList" resultType="bdto" parameterType="Map">
+		select * from bucket where user_name=#{user_name} and type=#{type} and withcount=10 order by num desc 
+	</select>
+	
+	<select id="mypageOffBucketList" resultType="bdto"  parameterType="Map">
+		select * from bucket where user_name=#{user_name} and type='off' order by num desc 
+	</select>
+	
+	<select id="mypageLikeBucketList" resultType="bdto"  parameterType="Map">
+		select * from bucket where user_name=#{user_name} and likecount=#{likecount} order by num desc 
+	</select>
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

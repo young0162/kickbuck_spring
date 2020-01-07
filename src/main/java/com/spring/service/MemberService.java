@@ -32,6 +32,17 @@ public class MemberService {
 		return dao.UserNameCheck(user_name);
 	}
 	
+	public MemberDto getData(int num) {
+		return dao.getData(num);
+	}
 	
+	//수정
+	public void updateProfile(MemberDto dto) 
+	{
+		dao.updateProfile(dto); 
+	}
 	
+	public MemberDto getImage(int num) {
+		return dao.getImage(num);
+	}
 }

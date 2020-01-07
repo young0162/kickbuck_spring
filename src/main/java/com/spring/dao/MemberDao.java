@@ -34,7 +34,18 @@ public class MemberDao extends SqlSessionDaoSupport {
 	{
 		return getSqlSession().selectOne("UserNameCheck",user_name);
 	}
-
 	
+	public MemberDto getData(int num) {
+		return getSqlSession().selectOne("profileSelect",num);
+	}
 	
+	//수정
+	public void updateProfile(MemberDto dto) 
+	{
+		getSqlSession().update("profileUpdate", dto); 
+	}
+	
+	public MemberDto getImage(int num) {
+		return getSqlSession().selectOne("profileImage",num);
+	}
 }
