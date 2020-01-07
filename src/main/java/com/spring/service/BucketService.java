@@ -57,7 +57,13 @@ public class BucketService {
 	{
 		return dao.getMyList(user_name);
 	}
-
+	
+	//우리
+	public List<BucketDto> getOurList(String user_name)
+	{
+		return dao.getOurList(user_name);
+	}
+	
 	
 	/*
 	 * dao.getOurList(user_name,type); } //대기 public void getStandbyList(String
