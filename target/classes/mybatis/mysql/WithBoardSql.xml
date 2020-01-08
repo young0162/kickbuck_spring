@@ -34,9 +34,9 @@
 		delete from withboard where with_num=#{with_num} 
 	</delete>
 	
-	<!-- 이미지 컬럼에 이름을 보내기 -->
+	<!-- 이미지 컬럼에 이름을 리액트로 보내기 -->
 	<select id="withImageGalleryData" resultType="String" >
-		select image_name from withboard
+		select image_name from withboard order by writeday desc
 	</select>
 	
 </mapper>
