@@ -54,21 +54,21 @@ public class BucketService {
 	{
 		dao.getOurList(user_name,type);
 	}
-	//대기
-	public void getStandbyList(String user_name,String type,String withcount)
-	{
-		dao.getStandbyList(user_name,type,withcount);
-	}
-	//오프
-	public void getOffList(String user_name,String type)
-	{
-		dao.getOffList(user_name,type);
-	}
-	//공감
-	public void getlikeList(String user_name,String lilecount)
-	{
-		dao.getlikeList(user_name,lilecount);
-	}
+//	//대기
+//	public void getStandbyList(String user_name,String type,String withcount)
+//	{
+//		dao.getStandbyList(user_name,type,withcount);
+//	}
+//	//오프
+//	public void getOffList(String user_name,String type)
+//	{
+//		dao.getOffList(user_name,type);
+//	}
+//	//공감
+//	public void getlikeList(String user_name,String lilecount)
+//	{
+//		dao.getlikeList(user_name,lilecount);
+//	}
 }
 
 

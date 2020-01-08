@@ -115,40 +115,40 @@ public class BucketController {
 
 		bservice.getOurList(user_name,type);
 	}
-	//대기
-	@RequestMapping("/mypage/standbylist")
-	public void getStandbyList(
-			@RequestBody Map<String, String> map)
-	{
-		System.out.println("react>>standbylist");
-		String user_name = map.get("user_name");
-		String type = map.get("type");
-		String withcount = map.get("withcount");
-
-		bservice.getStandbyList(user_name,type,withcount);
-	}
-	//오프
-	@RequestMapping("/mypage/offlist")
-	public void getOffList(
-			@RequestBody Map<String, String> map)
-	{
-		System.out.println("react>>offlist");
-		String user_name = map.get("user_name");
-		String type = map.get("type");
-
-		bservice.getOffList(user_name,type);
-	}
-	//공감
-	@RequestMapping("/mypage/likelist")
-	public void getlikeList(
-			@RequestBody Map<String, String> map)
-	{
-		System.out.println("react>>likelist");
-		String user_name = map.get("user_name");
-		String lilecount = map.get("likecount");
-
-		bservice.getlikeList(user_name,lilecount);
-	}
+//	//대기
+//	@RequestMapping("/mypage/standbylist")
+//	public void getStandbyList(
+//			@RequestBody Map<String, String> map)
+//	{
+//		System.out.println("react>>standbylist");
+//		String user_name = map.get("user_name");
+//		String type = map.get("type");
+//		String withcount = map.get("withcount");
+//
+//		bservice.getStandbyList(user_name,type,withcount);
+//	}
+//	//오프
+//	@RequestMapping("/mypage/offlist")
+//	public void getOffList(
+//			@RequestBody Map<String, String> map)
+//	{
+//		System.out.println("react>>offlist");
+//		String user_name = map.get("user_name");
+//		String type = map.get("type");
+//
+//		bservice.getOffList(user_name,type);
+//	}
+//	//공감
+//	@RequestMapping("/mypage/likelist")
+//	public void getlikeList(
+//			@RequestBody Map<String, String> map)
+//	{
+//		System.out.println("react>>likelist");
+//		String user_name = map.get("user_name");
+//		String lilecount = map.get("likecount");
+//
+//		bservice.getlikeList(user_name,lilecount);
+//	}
 	
 }
 
