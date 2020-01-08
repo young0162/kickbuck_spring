@@ -1,6 +1,7 @@
 package com.spring.dto;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 public class GuestDto {
 	private int num;
@@ -40,6 +41,11 @@ public class GuestDto {
 
 	public void setWriteday(Timestamp writeday) {
 		this.writeday = writeday;
+	}
+	
+	public String getDaytime() {
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		return sdf.format(this.getWriteday());
 	}
 	
 	@Override
