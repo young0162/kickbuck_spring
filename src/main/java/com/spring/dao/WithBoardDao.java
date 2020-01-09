@@ -13,9 +13,9 @@ import com.spring.dto.WithBoardDto;
 @Repository
 public class WithBoardDao extends SqlSessionDaoSupport{
 	
-	public List<WithBoardDto> getAllDatas()
+	public List<WithBoardDto> getAllDatas(int num)
 	{
-		return getSqlSession().selectList("withBoardList");
+		return getSqlSession().selectList("withBoardList",num);
 	}
 	
 	// 댓글 등록
@@ -48,9 +48,9 @@ public class WithBoardDao extends SqlSessionDaoSupport{
 	}
 	
 	// 이미지 네임을 배열로 불러오기
-	public List<String> getImageNames()
+	public List<String> getImageNames(int num)
 	{
-		return getSqlSession().selectList("withImageGalleryData");
+		return getSqlSession().selectList("withImageGalleryData",num);
 	}
 
 }

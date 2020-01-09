@@ -28,10 +28,10 @@ public class WithBoardController {
 	private WithBoardService wservice;
 	
 	@RequestMapping("/bucket/withboardlist")
-	public List<WithBoardDto> getAllDatas()
+	public List<WithBoardDto> getAllDatas(@RequestParam int num)
 	{
 		System.out.println("react>>list");
-		return wservice.getAllDatas(); 
+		return wservice.getAllDatas(num); 
 	}
 	
 	@RequestMapping(value = "/bucket/withboard/save",consumes = {"multipart/form-data"},
@@ -86,9 +86,9 @@ public class WithBoardController {
 
 	
 	@RequestMapping("/bucket/withimagenames")
-	public List<String> getImageNames()
+	public List<String> getImageNames(@RequestParam int num)
 	{
-		return wservice.getImageNames();
+		return wservice.getImageNames(num);
 	}
 	
 }

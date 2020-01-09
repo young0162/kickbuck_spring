@@ -14,9 +14,9 @@ public class WithBoardService {
 	@Autowired
 	private WithBoardDao dao;
 	
-	public List<WithBoardDto> getAllDatas()
+	public List<WithBoardDto> getAllDatas(int num)
 	{
-		return dao.getAllDatas();
+		return dao.getAllDatas(num);
 	}
 		
 	// 댓글 등록
@@ -49,8 +49,8 @@ public class WithBoardService {
 	}
 	
 	// 이미지 네임을 배열로 불러오기
-	public List<String> getImageNames()
+	public List<String> getImageNames(int num)
 	{
-		return dao.getImageNames();
+		return dao.getImageNames(num);
 	}
 }

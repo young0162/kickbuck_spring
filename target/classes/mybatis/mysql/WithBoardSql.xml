@@ -4,8 +4,8 @@
 	
 	
 	<!-- 리스트  -->
-	<select id="withBoardList" resultType="wdto">
-		select * from withboard order by group_num desc, writeday asc 
+	<select id="withBoardList" resultType="wdto" parameterType="int">
+		select * from withboard where num = #{num} order by group_num desc, writeday asc 
 	</select>
 	
 	<!-- 함께하기 입력  -->
@@ -35,8 +35,8 @@
 	</delete>
 	
 	<!-- 이미지 컬럼에 이름을 리액트로 보내기 -->
-	<select id="withImageGalleryData" resultType="String" >
-		select image_name from withboard order by writeday desc
+	<select id="withImageGalleryData" resultType="String" parameterType="int" >
+		select image_name from withboard where num = #{num} order by writeday desc
 	</select>
 	
 </mapper>
