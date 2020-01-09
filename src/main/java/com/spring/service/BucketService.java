@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.dao.BucketDao;
 import com.spring.dto.BucketDto;
+import com.spring.dto.QnaCommentDto;
 
 @Service
 public class BucketService {
@@ -113,10 +114,28 @@ public class BucketService {
 		return dao.MyLikeUpBucket(user_name);
 	}
 	
-	public void WaitComplete(int num)
+	public void WaitComplete(String num)
 	{
 		dao.WaitComplete(num);
 	}
+	
+	
+	public String withuserselect(int num)
+	{
+		return dao.withuserselect(num);
+	}
+	
+	public int WithCountCheck(int num)
+	{
+		return dao.WithCountCheck(num);
+	}
+	
+	public void WithOpenUpdate(int num)
+	{
+		dao.WithOpenUpdate(num);
+	}
+	
+	 
 	
 }
 

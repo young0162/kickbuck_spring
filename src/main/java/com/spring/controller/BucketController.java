@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.spring.dto.BucketDto;
-
+import com.spring.dto.QnaCommentDto;
 import com.spring.service.BucketService;
 
 import spring.react.util.SpringFileWriter;
@@ -55,8 +56,9 @@ public class BucketController {
 	{
 		String user_name = map.get("user_name");
 		String num = map.get("num");
+		
 
-
+		bservice.WaitComplete(num);
 		bservice.bucketWithUp(user_name,num);
 	}
 
@@ -175,13 +177,27 @@ public class BucketController {
 	 {
 		 return bservice.MyLikeUpBucket(user_name);
 	 }
+
 	 
-	 @RequestMapping("/waitcomplete")
-	 public void WaitComplete(@RequestParam int num)
+	 @RequestMapping("/with_user")
+	 public String withuserselect(@RequestParam int num)
 	 {
-		 bservice.WaitComplete(num);
+		 return bservice.withuserselect(num);
 	 }
 	 
+	 @RequestMapping("/withcountcheck")
+	 public int WithCountCheck(@RequestParam int num)
+	 {
+		 return bservice.WithCountCheck(num);
+	 }
+	 
+	 @RequestMapping("/withopenupdate")
+	 public void WithOpenUpdate(@RequestParam int num) 
+	 {
+		 bservice.WithOpenUpdate(num);
+	 }
+	 
+	
 }
 
 

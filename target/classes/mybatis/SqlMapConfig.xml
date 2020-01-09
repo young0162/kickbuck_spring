@@ -24,5 +24,6 @@
 	 	<mapper resource="mybatis/mysql/BucketSql.xml" /> 
 	 	<mapper resource="mybatis/mysql/OffBucketSql.xml" />
 	 	<mapper resource="mybatis/mysql/GuestSql.xml" />
+	 	<mapper resource="mybatis/mysql/BucketCommentSql.xml" />
 	 </mappers>
 </configuration>

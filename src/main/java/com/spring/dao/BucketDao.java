@@ -8,6 +8,7 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import com.spring.dto.BucketDto;
+import com.spring.dto.QnaCommentDto;
 
 @Repository
 public class BucketDao extends SqlSessionDaoSupport{
@@ -115,11 +116,27 @@ public class BucketDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("MyLikeUpBucket",user_name);
 	}
 	
-	public void WaitComplete(int num)
+	public void WaitComplete(String num)
 	{
-		getSqlSession().update("WaitComplete");
+		getSqlSession().update("WaitComplete",num);
 	}
 
+	
+	public String withuserselect(int num)
+	{
+		return getSqlSession().selectOne("withuserselect",num);
+	}
+	
+	public int WithCountCheck(int num)
+	{
+		return getSqlSession().selectOne("WithCountCheck",num);
+	}
+	
+	public void WithOpenUpdate(int num)
+	{
+		getSqlSession().selectOne("WithOpenUpdate",num);
+	}
+	
 }
 
 

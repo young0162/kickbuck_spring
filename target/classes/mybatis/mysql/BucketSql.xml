@@ -58,8 +58,12 @@
 	</select>
 	
 	<select id="WaitMyBucket" parameterType="String" resultType="bdto">
-		select * from bucket where user_name = #{user_name} and  withcount >= 10 and type = 'solo'
+		select * from bucket where user_name = #{user_name} and  withcount >= 10 and type = 'with' and withopen = 0
 	</select>
+	
+	<update id="WithOpenUpdate" parameterType="int">
+		update bucket set withopen = 1 where num = #{num}
+	</update>
 	
 	<update id="OffUpdate" parameterType="int">
 		update bucket set type = 'off' where num = #{num}
@@ -77,9 +81,18 @@
 		select * from bucket where with_user like concat('%',#{user_name},'%') order by num desc
 	</select>
 	
-	<update id="WaitComplete" parameterType="int">
+	<update id="WaitComplete" parameterType="String">
 		update bucket set type = 'with' where num = #{num}
 	</update>
+	
+	<select id="withuserselect" parameterType="int" resultType="String">
+		select with_user from bucket where num = #{num}
+	</select>
+	
+	<select id="WithCountCheck" parameterType="int" resultType="int">
+		select count(*) from bucket where num = #{num} and withcount >= 10 and withopen = 1
+	</select>
+	
 </mapper>
 
 
